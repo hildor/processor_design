@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "/home/hildor/Documents/TBD/processor_design/logical_unit.xst" -ofn "/home/hildor/Documents/TBD/processor_design/logical_unit.syr" 

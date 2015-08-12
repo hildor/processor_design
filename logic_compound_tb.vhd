@@ -1,16 +1,16 @@
 --------------------------------------------------------------------------------
--- Company:			EAH
+-- Company: 		EAH
 -- Engineer:		Tobias Junge
 --
--- Create Date:   10:52:02 08/12/2015
+-- Create Date:   21:08:35 08/12/2015
 -- Design Name:   
--- Module Name:   /home/hildor/Documents/TBD/processor_design/logical_unit_tb.vhd
+-- Module Name:   /home/hildor/Documents/TBD/processor_design/logic_compound_tb.vhd
 -- Project Name:  processor_design
 -- Target Device:  
 -- Tool versions:  
 -- Description:   
 -- 
--- VHDL Test Bench Created by ISE for module: logical_unit
+-- VHDL Test Bench Created by ISE for module: logic_compound
 -- 
 -- Dependencies:
 -- 
@@ -32,128 +32,109 @@ USE ieee.std_logic_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
  
-ENTITY logical_unit_tb IS
-END logical_unit_tb;
+ENTITY logic_compound_tb IS
+END logic_compound_tb;
  
-ARCHITECTURE behavior OF logical_unit_tb IS 
+ARCHITECTURE behavior OF logic_compound_tb IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT logical_unit
+    COMPONENT logic_compound
     PORT(
-         OP_A : IN  bit;
-         OP_B : IN  bit;
+         OP_A : IN  bit_vector(7 downto 0);
+         OP_B : IN  bit_vector(7 downto 0);
          OP_CODE : IN  bit_vector(2 downto 0);
-         RESULT : OUT  bit
+         RESULT : OUT  bit_vector(7 downto 0)
         );
     END COMPONENT;
     
 
    --Inputs
-   signal OP_A : bit := '0';
-   signal OP_B : bit := '0';
+   signal OP_A : bit_vector(7 downto 0) := (others => '0');
+   signal OP_B : bit_vector(7 downto 0) := (others => '0');
    signal OP_CODE : bit_vector(2 downto 0) := (others => '0');
 
  	--Outputs
-   signal RESULT : bit;
+   signal RESULT : bit_vector(7 downto 0);
 
-
+ 
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: logical_unit PORT MAP (
+   uut: logic_compound PORT MAP (
           OP_A => OP_A,
           OP_B => OP_B,
           OP_CODE => OP_CODE,
           RESULT => RESULT
         );
-		  
+
    -- Stimulus process
    stim_proc: process
    begin		
       -- hold reset state for 100 ns.
-      wait for 100 ns;	
-		
-      -- insert stimulus here
+      wait for 100 ns;
+		-- insert stimulus here 
 		-- logical and
 		OP_CODE <= "000";
 		-- reset operators
-		OP_A <= '0';
-		OP_B <= '0';
+		OP_A <= "00000000";
+		OP_B <= "00000000";
 		wait for 100 ns;
 		
-		OP_A <= '0';
-		OP_B <= '1';
+		OP_A <= "01010101";
+		OP_B <= "10101010";
 		wait for 100 ns;
 		
-		OP_A <= '1';
-		OP_B <= '0';
+		OP_A <= "10101010";
+		OP_B <= "10101010";
 		wait for 100 ns;
 		
-		OP_A <= '1';
-		OP_B <= '1';
-		wait for 100 ns;
-			
 		-- logical or
 		OP_CODE <= "001";
 		-- reset operators
-		OP_A <= '0';
-		OP_B <= '0';
+		OP_A <= "00000000";
+		OP_B <= "00000000";
 		wait for 100 ns;
 		
-		OP_A <= '0';
-		OP_B <= '1';
+		OP_A <= "01010101";
+		OP_B <= "10101010";
 		wait for 100 ns;
 		
-		OP_A <= '1';
-		OP_B <= '0';
-		wait for 100 ns;
-		
-		OP_A <= '1';
-		OP_B <= '1';
+		OP_A <= "10101010";
+		OP_B <= "10101010";
 		wait for 100 ns;
 		
 		-- logical xor
 		OP_CODE <= "010";
 		-- reset operators
-		OP_A <= '0';
-		OP_B <= '0';
-		wait for 100 ns;
-				
-		OP_A <= '0';
-		OP_B <= '1';
+		OP_A <= "00000000";
+		OP_B <= "00000000";
 		wait for 100 ns;
 		
-		OP_A <= '1';
-		OP_B <= '0';
+		OP_A <= "01010101";
+		OP_B <= "10101010";
 		wait for 100 ns;
 		
-		OP_A <= '1';
-		OP_B <= '1';
+		OP_A <= "10101010";
+		OP_B <= "10101010";
 		wait for 100 ns;
 		
 		-- logical OP_A not
 		OP_CODE <= "011";
 		-- reset operators
-		OP_A <= '0';
-		OP_B <= '0';
+		OP_A <= "00000000";
+		OP_B <= "00000000";
 		wait for 100 ns;
 		
-		OP_A <= '0';
-		OP_B <= '1';
+		OP_A <= "01010101";
+		OP_B <= "10101010";
 		wait for 100 ns;
 		
-		OP_A <= '1';
-		OP_B <= '0';
+		OP_A <= "10101010";
+		OP_B <= "10101010";
 		wait for 100 ns;
 		
-		OP_A <= '1';
-		OP_B <= '1';
-		wait for 100 ns;
-		
-		-- simulation end
-		wait;
-		
+      wait;
    end process;
 
 END;

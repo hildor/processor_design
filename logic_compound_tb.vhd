@@ -75,36 +75,6 @@ BEGIN
       wait for 100 ns;
 		-- insert stimulus here 
 		-- logical and
-		OP_CODE <= "000";
-		-- reset operators
-		OP_A <= "00000000";
-		OP_B <= "00000000";
-		wait for 100 ns;
-		
-		OP_A <= "01010101";
-		OP_B <= "10101010";
-		wait for 100 ns;
-		
-		OP_A <= "10101010";
-		OP_B <= "10101010";
-		wait for 100 ns;
-		
-		-- logical or
-		OP_CODE <= "001";
-		-- reset operators
-		OP_A <= "00000000";
-		OP_B <= "00000000";
-		wait for 100 ns;
-		
-		OP_A <= "01010101";
-		OP_B <= "10101010";
-		wait for 100 ns;
-		
-		OP_A <= "10101010";
-		OP_B <= "10101010";
-		wait for 100 ns;
-		
-		-- logical xor
 		OP_CODE <= "010";
 		-- reset operators
 		OP_A <= "00000000";
@@ -119,8 +89,38 @@ BEGIN
 		OP_B <= "10101010";
 		wait for 100 ns;
 		
-		-- logical OP_A not
+		-- logical or
 		OP_CODE <= "011";
+		-- reset operators
+		OP_A <= "00000000";
+		OP_B <= "00000000";
+		wait for 100 ns;
+		
+		OP_A <= "01010101";
+		OP_B <= "10101010";
+		wait for 100 ns;
+		
+		OP_A <= "10101010";
+		OP_B <= "10101010";
+		wait for 100 ns;
+		
+		-- logical xor
+		OP_CODE <= "100";
+		-- reset operators
+		OP_A <= "00000000";
+		OP_B <= "00000000";
+		wait for 100 ns;
+		
+		OP_A <= "01010101";
+		OP_B <= "10101010";
+		wait for 100 ns;
+		
+		OP_A <= "10101010";
+		OP_B <= "10101010";
+		wait for 100 ns;
+		
+		-- logical OP_A not
+		OP_CODE <= "101";
 		-- reset operators
 		OP_A <= "00000000";
 		OP_B <= "00000000";

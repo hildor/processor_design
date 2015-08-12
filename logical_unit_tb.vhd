@@ -76,7 +76,7 @@ BEGIN
 		
       -- insert stimulus here
 		-- logical and
-		OP_CODE <= "000";
+		OP_CODE <= "010";
 		-- reset operators
 		OP_A <= '0';
 		OP_B <= '0';
@@ -95,7 +95,7 @@ BEGIN
 		wait for 100 ns;
 			
 		-- logical or
-		OP_CODE <= "001";
+		OP_CODE <= "011";
 		-- reset operators
 		OP_A <= '0';
 		OP_B <= '0';
@@ -114,7 +114,7 @@ BEGIN
 		wait for 100 ns;
 		
 		-- logical xor
-		OP_CODE <= "010";
+		OP_CODE <= "100";
 		-- reset operators
 		OP_A <= '0';
 		OP_B <= '0';
@@ -133,7 +133,7 @@ BEGIN
 		wait for 100 ns;
 		
 		-- logical OP_A not
-		OP_CODE <= "011";
+		OP_CODE <= "101";
 		-- reset operators
 		OP_A <= '0';
 		OP_B <= '0';

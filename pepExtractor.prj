@@ -1,2 +1,1 @@
-work	"logic_module.vhd"
-work	"logical_unit.vhd"
+work	"logic_compound.vhd"

@@ -43,7 +43,7 @@ architecture behavioral of full_adder is
 	signal SIG_HA1_SUM, SIG_HA1_COUT, SIG_HA2_COUT : BIT;
 
 begin
---instantiate and do port map
+-- instantiate and do port map
 	HA1 : half_adder port map (OP_A,OP_B,SIG_HA1_COUT, SIG_HA1_SUM);
 	HA2 : half_adder port map (SIG_HA1_SUM, CIN, SIG_HA2_COUT, SUM);
 	COUT <= SIG_HA1_COUT or SIG_HA2_COUT;

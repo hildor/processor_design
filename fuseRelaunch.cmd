@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/hildor/Workspace/processor_design/full_adder_tb_isim_beh.exe" -prj "/home/hildor/Workspace/processor_design/full_adder_tb_beh.prj" "work.full_adder_tb" 
+-intstyle "ise" -incremental -lib "secureip" -o "/home/hildor/Workspace/processor_design/rca_8bit_tb_isim_beh.exe" -prj "/home/hildor/Workspace/processor_design/rca_8bit_tb_beh.prj" "work.rca_8bit_tb" 

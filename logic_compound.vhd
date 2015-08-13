@@ -39,7 +39,7 @@ architecture behavioral of logic_compound is
 	end component;
 				
 begin
---instantiate and do port map
+-- instantiate and do port map
 	LU7 : logical_unit port map (OP_A(7),OP_B(7),OP_CODE,RESULT(7));
 	LU6 : logical_unit port map (OP_A(6),OP_B(6),OP_CODE,RESULT(6));
 	LU5 : logical_unit port map (OP_A(5),OP_B(5),OP_CODE,RESULT(5));

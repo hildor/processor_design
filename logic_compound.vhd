@@ -22,7 +22,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- entity of module
 entity logic_compound is
-    Port ( OP_A : in  BIT_VECTOR (7 downto 0);
+    port ( OP_A : in  BIT_VECTOR (7 downto 0);
            OP_B : in  BIT_VECTOR (7 downto 0);
            OP_CODE : in  BIT_VECTOR (2 downto 0);
            RESULT : out  BIT_VECTOR (7 downto 0));

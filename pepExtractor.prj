@@ -1,1 +1,2 @@
-work	"logic_compound.vhd"
+work	"full_adder.vhd"
+work	"half_adder.vhd"

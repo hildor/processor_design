@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/hildor/Documents/TBD/processor_design/logical_unit_tb_isim_beh.exe" -prj "/home/hildor/Documents/TBD/processor_design/logical_unit_tb_beh.prj" "work.logical_unit_tb" 
+-intstyle "ise" -incremental -lib "secureip" -o "/home/hildor/Workspace/processor_design/full_adder_tb_isim_beh.exe" -prj "/home/hildor/Workspace/processor_design/full_adder_tb_beh.prj" "work.full_adder_tb" 

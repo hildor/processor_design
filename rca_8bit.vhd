@@ -24,7 +24,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity rca_8bit is
     Port ( OP_A : in  BIT_VECTOR (7 downto 0);
            OP_B : in  BIT_VECTOR (7 downto 0);
-           CIN : in  BIT;
+           SUB : in  BIT;
            SUM_RCA : out  BIT_VECTOR (7 downto 0);
 			  COUT : out  BIT;
 			  OVFL : out BIT );
@@ -45,21 +45,21 @@ architecture behavioral of rca_8bit is
 	signal 	SIG_FA1_COUT, SIG_FA2_COUT, SIG_FA3_COUT, SIG_FA4_COUT, 
 				SIG_FA5_COUT, SIG_FA6_COUT, SIG_FA7_COUT, SIG_FA8_COUT : BIT;
 	signal	SIG_SW_ADDSUB : BIT_VECTOR (7 downto 0);
-	signal	SIG_CIN : BIT_VECTOR (7 downto 0);
+	signal	SIG_SUB : BIT_VECTOR (7 downto 0);
 
 begin
 -- generate complement of two 
-	SIG_CIN(0) <= CIN;
-	SIG_CIN(1) <= CIN;
-	SIG_CIN(2) <= CIN;
-	SIG_CIN(3) <= CIN;
-	SIG_CIN(4) <= CIN;
-	SIG_CIN(5) <= CIN;
-	SIG_CIN(6) <= CIN;
-	SIG_CIN(7) <= CIN;
-	SIG_SW_ADDSUB <= SIG_CIN xor OP_B;
+	SIG_SUB(0) <= SUB;
+	SIG_SUB(1) <= SUB;
+	SIG_SUB(2) <= SUB;
+	SIG_SUB(3) <= SUB;
+	SIG_SUB(4) <= SUB;
+	SIG_SUB(5) <= SUB;
+	SIG_SUB(6) <= SUB;
+	SIG_SUB(7) <= SUB;
+	SIG_SW_ADDSUB <= SIG_SUB xor OP_B;
 -- instantiate and do port map
-	FA1 : full_adder port map (OP_A(0),SIG_SW_ADDSUB(0),CIN, SUM_RCA(0), SIG_FA1_COUT);
+	FA1 : full_adder port map (OP_A(0),SIG_SW_ADDSUB(0),SUB, SUM_RCA(0), SIG_FA1_COUT);
 	FA2 : full_adder port map (OP_A(1),SIG_SW_ADDSUB(1),SIG_FA1_COUT, SUM_RCA(1), SIG_FA2_COUT);
 	FA3 : full_adder port map (OP_A(2),SIG_SW_ADDSUB(2),SIG_FA2_COUT, SUM_RCA(2), SIG_FA3_COUT);
 	FA4 : full_adder port map (OP_A(3),SIG_SW_ADDSUB(3),SIG_FA3_COUT, SUM_RCA(3), SIG_FA4_COUT);

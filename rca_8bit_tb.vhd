@@ -43,7 +43,7 @@ ARCHITECTURE behavior OF rca_8bit_tb IS
     PORT(
          OP_A : IN  bit_vector(7 downto 0);
          OP_B : IN  bit_vector(7 downto 0);
-         CIN : IN  bit;
+         SUB : IN  bit;
          SUM_RCA : OUT  bit_vector(7 downto 0);
          COUT : OUT  bit;
          OVFL : OUT  bit
@@ -54,7 +54,7 @@ ARCHITECTURE behavior OF rca_8bit_tb IS
    --Inputs
    signal OP_A : bit_vector(7 downto 0) := (others => '0');
    signal OP_B : bit_vector(7 downto 0) := (others => '0');
-   signal CIN : bit := '0';
+   signal SUB : bit := '0';
 
  	--Outputs
    signal SUM_RCA : bit_vector(7 downto 0);
@@ -67,7 +67,7 @@ BEGIN
    uut: rca_8bit PORT MAP (
           OP_A => OP_A,
           OP_B => OP_B,
-          CIN => CIN,
+          SUB => SUB,
           SUM_RCA => SUM_RCA,
           COUT => COUT,
           OVFL => OVFL
@@ -82,7 +82,7 @@ BEGIN
 		-- reset operators
 		OP_A <= "00000000";
 		OP_B <= "00000000";
-		CIN <= '0';
+		SUB <= '0';
 		wait for 100 ns;
 		
 		-- 3+1 
@@ -101,7 +101,7 @@ BEGIN
 		wait for 100 ns;
 		
 		-- set carry in for subtraction
-		CIN <= '1';
+		SUB <= '1';
 		-- 3-1 
 		OP_A <= "00000011";
 		OP_B <= "00000001";

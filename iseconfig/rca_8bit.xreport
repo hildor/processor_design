@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-08-13T19:12:18</DateModified>
+  <DateModified>2015-08-14T10:19:50</DateModified>
   <ModuleName>rca_8bit</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
+  <SummaryTimeStamp>2015-08-14T10:16:35</SummaryTimeStamp>
   <SavedFilePath>/home/hildor/Workspace/processor_design/iseconfig/rca_8bit.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/hildor/Workspace/processor_design</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>/home/hildor/Workspace/processor_design/</ImplementationReportsDirectory>
   <DateInitialized>2015-08-13T19:07:28</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

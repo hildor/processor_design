@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/hildor/Workspace/processor_design/rca_8bit_tb_isim_beh.exe" -prj "/home/hildor/Workspace/processor_design/rca_8bit_tb_beh.prj" "work.rca_8bit_tb" 
+-intstyle "ise" -incremental -lib "secureip" -o "/home/hildor/Workspace/processor_design/logic_compound_tb_isim_beh.exe" -prj "/home/hildor/Workspace/processor_design/logic_compound_tb_beh.prj" "work.logic_compound_tb" 

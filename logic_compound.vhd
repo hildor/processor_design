@@ -25,7 +25,7 @@ entity logic_compound is
     port ( OP_A : in  BIT_VECTOR (7 downto 0);
            OP_B : in  BIT_VECTOR (7 downto 0);
            OP_CODE : in  BIT_VECTOR (2 downto 0);
-           RESULT : out  BIT_VECTOR (7 downto 0));
+           RESULT_LOGIC : out  BIT_VECTOR (7 downto 0));
 end logic_compound;
 
 -- architecture describes behavior of module
@@ -40,14 +40,14 @@ architecture behavioral of logic_compound is
 				
 begin
 -- instantiate and do port map
-	LU7 : logical_unit port map (OP_A(7),OP_B(7),OP_CODE,RESULT(7));
-	LU6 : logical_unit port map (OP_A(6),OP_B(6),OP_CODE,RESULT(6));
-	LU5 : logical_unit port map (OP_A(5),OP_B(5),OP_CODE,RESULT(5));
-	LU4 : logical_unit port map (OP_A(4),OP_B(4),OP_CODE,RESULT(4));
-	LU3 : logical_unit port map (OP_A(3),OP_B(3),OP_CODE,RESULT(3));
-	LU2 : logical_unit port map (OP_A(2),OP_B(2),OP_CODE,RESULT(2));
-	LU1 : logical_unit port map (OP_A(1),OP_B(1),OP_CODE,RESULT(1));
-	LU0 : logical_unit port map (OP_A(0),OP_B(0),OP_CODE,RESULT(0));
+	LU7 : logical_unit port map (OP_A(7),OP_B(7),OP_CODE,RESULT_LOGIC(7));
+	LU6 : logical_unit port map (OP_A(6),OP_B(6),OP_CODE,RESULT_LOGIC(6));
+	LU5 : logical_unit port map (OP_A(5),OP_B(5),OP_CODE,RESULT_LOGIC(5));
+	LU4 : logical_unit port map (OP_A(4),OP_B(4),OP_CODE,RESULT_LOGIC(4));
+	LU3 : logical_unit port map (OP_A(3),OP_B(3),OP_CODE,RESULT_LOGIC(3));
+	LU2 : logical_unit port map (OP_A(2),OP_B(2),OP_CODE,RESULT_LOGIC(2));
+	LU1 : logical_unit port map (OP_A(1),OP_B(1),OP_CODE,RESULT_LOGIC(1));
+	LU0 : logical_unit port map (OP_A(0),OP_B(0),OP_CODE,RESULT_LOGIC(0));
 	
 end behavioral;
 

@@ -44,7 +44,7 @@ ARCHITECTURE behavior OF logic_compound_tb IS
          OP_A : IN  bit_vector(7 downto 0);
          OP_B : IN  bit_vector(7 downto 0);
          OP_CODE : IN  bit_vector(2 downto 0);
-         RESULT : OUT  bit_vector(7 downto 0)
+         RESULT_LOGIC : OUT  bit_vector(7 downto 0)
         );
     END COMPONENT;
     
@@ -55,7 +55,7 @@ ARCHITECTURE behavior OF logic_compound_tb IS
    signal OP_CODE : bit_vector(2 downto 0) := (others => '0');
 
  	--Outputs
-   signal RESULT : bit_vector(7 downto 0);
+   signal RESULT_LOGIC : bit_vector(7 downto 0);
 
  
 BEGIN
@@ -65,7 +65,7 @@ BEGIN
           OP_A => OP_A,
           OP_B => OP_B,
           OP_CODE => OP_CODE,
-          RESULT => RESULT
+          RESULT_LOGIC => RESULT_LOGIC
         );
 
    -- Stimulus process

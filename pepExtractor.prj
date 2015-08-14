@@ -1,3 +1,1 @@
-work	"full_adder.vhd"
-work	"half_adder.vhd"
-work	"rca_8bit.vhd"
+work	"r_shifter_8bit.vhd"

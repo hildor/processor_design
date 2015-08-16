@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-08-16T11:14:54</DateModified>
+  <DateModified>2015-08-17T00:11:28</DateModified>
   <ModuleName>alu_flags</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
+  <SummaryTimeStamp>2015-08-17T00:03:10</SummaryTimeStamp>
   <SavedFilePath>/home/hildor/Workspace/processor_design/iseconfig/alu_flags.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/hildor/Workspace/processor_design</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>/home/hildor/Workspace/processor_design/</ImplementationReportsDirectory>
   <DateInitialized>2015-08-16T11:13:33</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

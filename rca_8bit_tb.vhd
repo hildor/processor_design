@@ -46,7 +46,8 @@ ARCHITECTURE behavior OF rca_8bit_tb IS
          SUB : IN  bit;
          SUM_RCA : OUT  bit_vector(7 downto 0);
          COUT : OUT  bit;
-         OVFL : OUT  bit
+         OVFL : OUT  bit;
+			HCOUT : OUT  bit
         );
     END COMPONENT;
     
@@ -60,6 +61,7 @@ ARCHITECTURE behavior OF rca_8bit_tb IS
    signal SUM_RCA : bit_vector(7 downto 0);
    signal COUT : bit;
    signal OVFL : bit;
+	signal HCOUT : bit;
  
 BEGIN
  
@@ -70,7 +72,8 @@ BEGIN
           SUB => SUB,
           SUM_RCA => SUM_RCA,
           COUT => COUT,
-          OVFL => OVFL
+          OVFL => OVFL,
+			 HCOUT => HCOUT
         );
 
    -- Stimulus process
@@ -97,6 +100,11 @@ BEGIN
 		
 		-- 127+1
 		OP_A <= "01111111";
+		OP_B <= "00000001";
+		wait for 100 ns;
+		
+		-- 15+1
+		OP_A <= "00001111";
 		OP_B <= "00000001";
 		wait for 100 ns;
 		

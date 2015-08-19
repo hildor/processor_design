@@ -27,7 +27,8 @@ entity rca_8bit is
            SUB : in  BIT;
            SUM_RCA : out  BIT_VECTOR (7 downto 0);
 			  COUT : out  BIT;
-			  OVFL : out BIT );
+			  OVFL : out BIT;
+			  HCOUT : out BIT);
 end rca_8bit;
 
 -- architecture describes behavior of module
@@ -69,6 +70,7 @@ begin
 	FA8 : full_adder port map (OP_A(7),SIG_SW_ADDSUB(7),SIG_FA7_COUT, SUM_RCA(7),	SIG_FA8_COUT);
 -- generate carry and overflow flag
 	COUT <= SIG_FA8_COUT;
+	HCOUT <= SIG_FA4_COUT;
 	OVFL <= SIG_FA7_COUT xor SIG_FA8_COUT;
 
 end behavioral;

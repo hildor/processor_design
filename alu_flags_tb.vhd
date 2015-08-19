@@ -44,7 +44,8 @@ ARCHITECTURE behavior OF alu_flags_tb IS
          ALU_RESULT : IN  bit_vector(7 downto 0);
          OVFL : IN  bit;
          COUT : IN  bit;
-         FLAGS : OUT  bit_vector(3 downto 0)
+			HCOUT : IN  bit;
+         FLAGS : OUT  bit_vector(5 downto 0)
         );
     END COMPONENT;
     
@@ -53,9 +54,10 @@ ARCHITECTURE behavior OF alu_flags_tb IS
    signal ALU_RESULT : bit_vector(7 downto 0) := (others => '0');
    signal OVFL : bit := '0';
    signal COUT : bit := '0';
+	signal HCOUT : bit := '0';
 
  	--Outputs
-   signal FLAGS : bit_vector(3 downto 0);
+   signal FLAGS : bit_vector(5 downto 0);
 
 BEGIN
  
@@ -64,6 +66,7 @@ BEGIN
           ALU_RESULT => ALU_RESULT,
           OVFL => OVFL,
           COUT => COUT,
+			 HCOUT => HCOUT,
           FLAGS => FLAGS
         );
 		  
@@ -74,6 +77,12 @@ BEGIN
 		ALU_RESULT <= "00000000";
 		wait for 100 ns;
 		ALU_RESULT <= "10000000";
+		wait for 100 ns;
+		ALU_RESULT <= "00000111";
+		wait for 100 ns;
+		ALU_RESULT <= "10011001";
+		wait for 100 ns;
+		HCOUT <= HCOUT;
 		
       wait;
    end process;

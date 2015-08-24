@@ -1,1 +1,3 @@
-work	"result_mux.vhd"
+work	"csa_unit.vhd"
+work	"full_adder.vhd"
+work	"half_adder.vhd"

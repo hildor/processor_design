@@ -7,23 +7,28 @@
    <ItemView engineview="SynthesisOnly" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/csa_8bit - behavioral |home|hildor|Workspace|processor_design|csa_8bit.vhd</ClosedNode>
          <ClosedNode>/csa_unit - behavioral |home|hildor|Workspace|processor_design|csa_unit.vhd</ClosedNode>
          <ClosedNode>/csa_unit - behavioral |home|hildor|Workspace|processor_design|csa_unit.vhd/FA1 - full_adder - behavioral</ClosedNode>
          <ClosedNode>/csa_unit - behavioral |home|hildor|Workspace|processor_design|csa_unit.vhd/FA2 - full_adder - behavioral</ClosedNode>
+         <ClosedNode>/csa_unit_tb - behavior |home|hildor|Workspace|processor_design|csa_unit_tb.vhd</ClosedNode>
          <ClosedNode>/full_adder - behavioral |home|hildor|Workspace|processor_design|full_adder.vhd</ClosedNode>
          <ClosedNode>/logic_compound - behavioral |home|hildor|Workspace|processor_design|logic_compound.vhd</ClosedNode>
          <ClosedNode>/logic_module - behavioral |home|hildor|Documents|TBD|processor_design|logic_module.vhd</ClosedNode>
+         <ClosedNode>/rca_8bit - behavioral |home|hildor|Workspace|processor_design|csa_8bit.vhd</ClosedNode>
+         <ClosedNode>/rca_8bit - behavioral |home|hildor|Workspace|processor_design|csa_8bit.vhd/CSA_U0 - csa_unit - behavioral</ClosedNode>
+         <ClosedNode>/rca_8bit - behavioral |home|hildor|Workspace|processor_design|csa_8bit.vhd/CSA_U1 - csa_unit - behavioral</ClosedNode>
          <ClosedNode>/rca_8bit - behavioral |home|hildor|Workspace|processor_design|rca_8bit.vhd</ClosedNode>
          <ClosedNode>/rca_8bit - behavioral |home|hildor|Workspace|processor_design|rca_8bit.vhd/FA1 - full_adder - behavioral</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>csa_unit - behavioral (/home/hildor/Workspace/processor_design/csa_unit.vhd)</SelectedItem>
+         <SelectedItem>csa_8bit - behavioral (/home/hildor/Workspace/processor_design/csa_8bit.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000194000000020000000000000000000000000200000064ffffffff000000810000000300000002000001940000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>csa_unit - behavioral (/home/hildor/Workspace/processor_design/csa_unit.vhd)</CurrentItem>
+      <CurrentItem>csa_8bit - behavioral (/home/hildor/Workspace/processor_design/csa_8bit.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -35,24 +40,26 @@
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem>Synthesize - XST</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000e5000000010000000100000000000000000000000064ffffffff000000810000000000000001000000e50000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f4000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f40000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem>Synthesize - XST</CurrentItem>
    </ItemView>
    <ItemView guiview="File" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
-      <SelectedItems/>
+      <SelectedItems>
+         <SelectedItem>csa_8bit.vhd</SelectedItem>
+      </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000000000000001000000000000000000000000000000000000028a000000040101000100000000000000000000000064ffffffff0000008100000000000000040000009700000001000000000000005d0000000100000000000000840000000100000000000001120000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000000000000001000000000000000000000000000000000000027b000000040101000100000000000000000000000064ffffffff0000008100000000000000040000009700000001000000000000005d0000000100000000000000840000000100000000000001030000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>logical_unit.vhd</CurrentItem>
+      <CurrentItem>csa_8bit.vhd</CurrentItem>
    </ItemView>
    <ItemView guiview="Library" >
       <ClosedNodes>
@@ -68,6 +75,7 @@
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/alu_flags_tb - behavior |home|hildor|Workspace|processor_design|alu_flags_tb.vhd</ClosedNode>
          <ClosedNode>/csa_unit_tb - behavior |home|hildor|Workspace|processor_design|csa_unit_tb.vhd</ClosedNode>
          <ClosedNode>/full_adder - behavioral |home|hildor|Workspace|processor_design|full_adder.vhd</ClosedNode>
          <ClosedNode>/full_adder_tb - behavior |home|hildor|Workspace|processor_design|full_adder_tb.vhd</ClosedNode>
@@ -105,16 +113,16 @@
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Simulate Behavioral Model</SelectedItem>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f4000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f40000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Simulate Behavioral Model</CurrentItem>
+      <CurrentItem></CurrentItem>
    </ItemView>
-   <SourceProcessView>000000ff000000000000000200000104000000c401000000060100000002</SourceProcessView>
-   <CurrentView>Behavioral Simulation</CurrentView>
+   <SourceProcessView>000000ff0000000000000002000000ea000000de01000000060100000002</SourceProcessView>
+   <CurrentView>Implementation</CurrentView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>

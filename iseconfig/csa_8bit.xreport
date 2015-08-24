@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-08-24T14:15:53</DateModified>
+  <DateModified>2015-08-24T14:16:59</DateModified>
   <ModuleName>csa_8bit</ModuleName>
-  <SummaryTimeStamp>2015-08-24T14:15:38</SummaryTimeStamp>
-  <SavedFilePath>/home/hildor/Workspace/processor_design/iseconfig/csa_unit.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/hildor/Workspace/processor_design/</ImplementationReportsDirectory>
-  <DateInitialized>2015-08-24T14:15:52</DateInitialized>
+  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
+  <SavedFilePath>/home/hildor/Workspace/processor_design/iseconfig/csa_8bit.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/home/hildor/Workspace/processor_design</ImplementationReportsDirectory>
+  <DateInitialized>2015-08-24T14:16:56</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

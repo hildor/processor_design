@@ -8,7 +8,7 @@
 -- Project Name: 
 -- Target Devices: 	XUP Virtex-II Pro Development System (Virtex2P)
 -- Tool versions: 
--- Description: 	 	8-bit compound of logical_units
+-- Description: 	 	8-STD_LOGIC compound of logical_units
 --
 -- Dependencies: 		
 --
@@ -22,20 +22,20 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- entity of module
 entity logic_compound is
-    port ( OP_A : in  BIT_VECTOR (7 downto 0);
-           OP_B : in  BIT_VECTOR (7 downto 0);
-           OP_CODE : in  BIT_VECTOR (2 downto 0);
-           RESULT_LOGIC : out  BIT_VECTOR (7 downto 0));
+    port ( OP_A : in  STD_LOGIC_VECTOR (7 downto 0);
+           OP_B : in  STD_LOGIC_VECTOR (7 downto 0);
+           OP_CODE : in  STD_LOGIC_VECTOR (2 downto 0);
+           RESULT_LOGIC : out  STD_LOGIC_VECTOR (7 downto 0));
 end logic_compound;
 
 -- architecture describes behavior of module
 architecture behavioral of logic_compound is
 -- sub-module is declared
 	component logical_unit
-		port(	OP_A : in BIT;
-				OP_B : in BIT;
-				OP_CODE : in BIT_VECTOR(2 downto 0);
-				RESULT : out BIT );
+		port(	OP_A : in STD_LOGIC;
+				OP_B : in STD_LOGIC;
+				OP_CODE : in STD_LOGIC_VECTOR(2 downto 0);
+				RESULT : out STD_LOGIC );
 	end component;
 				
 begin
@@ -48,6 +48,9 @@ begin
 	LU2 : logical_unit port map (OP_A(2),OP_B(2),OP_CODE,RESULT_LOGIC(2));
 	LU1 : logical_unit port map (OP_A(1),OP_B(1),OP_CODE,RESULT_LOGIC(1));
 	LU0 : logical_unit port map (OP_A(0),OP_B(0),OP_CODE,RESULT_LOGIC(0));
+-- generate flags
+	
+
 	
 end behavioral;
 

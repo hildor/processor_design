@@ -22,10 +22,10 @@ use IEEE.STD_LOGIC_1164.ALL; -- basic IEEE library
 
 -- entity of module
 entity logical_unit is
-    Port ( OP_A : in  BIT;
-           OP_B : in  BIT;
-           OP_CODE : in  BIT_VECTOR (2 downto 0);
-           RESULT : out  BIT);
+    Port ( OP_A : in  STD_LOGIC;
+           OP_B : in  STD_LOGIC;
+           OP_CODE : in  STD_LOGIC_VECTOR (2 downto 0);
+           RESULT : out  STD_LOGIC);
 end logical_unit;
 
 -- architecture describes behavior of module

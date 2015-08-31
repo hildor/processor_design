@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-08-13T12:49:38</DateModified>
-  <ModuleName>half_adder</ModuleName>
-  <SummaryTimeStamp>2015-08-13T12:40:43</SummaryTimeStamp>
+  <DateModified>2015-08-31T11:11:52</DateModified>
+  <ModuleName>adsu8_xilinx</ModuleName>
+  <SummaryTimeStamp>2015-08-31T11:10:17</SummaryTimeStamp>
   <SavedFilePath>/home/hildor/Workspace/processor_design/iseconfig/logic_compound.xreport</SavedFilePath>
   <ImplementationReportsDirectory>/home/hildor/Workspace/processor_design/</ImplementationReportsDirectory>
-  <DateInitialized>2015-08-13T12:49:38</DateInitialized>
+  <DateInitialized>2015-08-31T11:10:08</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

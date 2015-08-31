@@ -22,11 +22,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- entity of module
 entity result_mux is
-    Port ( OP_CODE : in  BIT_VECTOR (2 downto 0);
-           ARITHMETIC : in  BIT_VECTOR (7 downto 0);
-           LOGIC : in  BIT_VECTOR (7 downto 0);
-           SHIFT : in  BIT_VECTOR (7 downto 0);
-           ALU_R : out  BIT_VECTOR (7 downto 0));
+    Port ( OP_CODE : in  STD_LOGIC_VECTOR (2 downto 0);
+           ARITHMETIC : in  STD_LOGIC_VECTOR (7 downto 0);
+           LOGIC : in  STD_LOGIC_VECTOR (7 downto 0);
+           SHIFT : in  STD_LOGIC_VECTOR (7 downto 0);
+           ALU_R : out  STD_LOGIC_VECTOR (7 downto 0));
 end result_mux;
 
 -- architecture describes behavior of module

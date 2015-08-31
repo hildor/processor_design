@@ -4,11 +4,11 @@
 -- 	
 -- Create Date:	   23:35:10 08/14/2015 
 -- Design Name: 
--- Module Name:    	shifter_8bit - behavioral 
+-- Module Name:    	shifter_8STD_LOGIC - behavioral 
 -- Project Name: 
 -- Target Devices: 	XUP Virtex-II Pro Development System (Virtex2P)
 -- Tool versions: 
--- Description: 		single bit shifter is used to lsl, lsr, asl and asr
+-- Description: 		single STD_LOGIC shifter is used to lsr and asr
 --
 -- Dependencies: 
 --
@@ -22,15 +22,15 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- entity of module
 entity r_shifter_8bit is
-    Port ( OP_A : in  BIT_VECTOR (7 downto 1);
-			  LSR_ASR : in  BIT;
-			  RESULT_SHIFT : out  BIT_VECTOR (7 downto 0));
+    Port ( OP_A : in  STD_LOGIC_VECTOR (7 downto 1);
+			  LSR_ASR : in  STD_LOGIC;
+			  RESULT_SHIFT : out  STD_LOGIC_VECTOR (7 downto 0));
 end r_shifter_8bit;
 
 -- architecture describes behavior of module
 architecture behavioral of r_shifter_8bit is
 -- additional wires
-	signal 	SIG_MSB :  BIT;
+	signal 	SIG_MSB :  STD_LOGIC;
 
 begin
 -- catch msb for asr

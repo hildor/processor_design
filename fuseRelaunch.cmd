@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/hildor/Workspace/processor_design/csa_unit_tb_isim_beh.exe" -prj "/home/hildor/Workspace/processor_design/csa_unit_tb_beh.prj" "work.csa_unit_tb" 
+-intstyle "ise" -incremental -lib "secureip" -o "/home/hildor/Workspace/processor_design/adsu8_xilinx_tb_isim_beh.exe" -prj "/home/hildor/Workspace/processor_design/adsu8_xilinx_tb_beh.prj" "work.adsu8_xilinx_tb" 

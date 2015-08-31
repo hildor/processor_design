@@ -105,8 +105,7 @@ BEGIN
 		OP_CODE <= "111";
 		wait for 100 ns;
 		
-		
-      wait;
+		wait;
    end process;
 
 END;

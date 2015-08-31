@@ -7,6 +7,9 @@
    <ItemView engineview="SynthesisOnly" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/ALU - behavioral |home|hildor|Documents|TBD|processor_design|alu.vhd</ClosedNode>
+         <ClosedNode>/ALU - behavioral |home|hildor|Documents|TBD|processor_design|alu.vhd/ARITHMETIC - adsu8_xilinx - behavioral</ClosedNode>
+         <ClosedNode>/ALU - behavioral |home|hildor|Documents|TBD|processor_design|alu.vhd/LOGIC - logic_compound - behavioral</ClosedNode>
          <ClosedNode>/adsu8_xilinx - behavioral |home|hildor|Documents|TBD|processor_design|adsu8_xilinx.vhd</ClosedNode>
          <ClosedNode>/csa_8bit - behavioral |home|hildor|Workspace|processor_design|csa_8bit.vhd</ClosedNode>
          <ClosedNode>/csa_unit - behavioral |home|hildor|Workspace|processor_design|csa_unit.vhd</ClosedNode>
@@ -24,13 +27,13 @@
          <ClosedNode>/rca_8bit - behavioral |home|hildor|Workspace|processor_design|rca_8bit.vhd/FA1 - full_adder - behavioral</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>r_shifter_8bit - behavioral (/home/hildor/Documents/TBD/processor_design/r_shifter_8bit.vhd)</SelectedItem>
+         <SelectedItem>ALU - behavioral (/home/hildor/Documents/TBD/processor_design/alu.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000194000000020000000000000000000000000200000064ffffffff000000810000000300000002000001940000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000000fd000000020000000000000000000000000200000064ffffffff000000810000000300000002000000fd0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>r_shifter_8bit - behavioral (/home/hildor/Documents/TBD/processor_design/r_shifter_8bit.vhd)</CurrentItem>
+      <CurrentItem>ALU - behavioral (/home/hildor/Documents/TBD/processor_design/alu.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -75,30 +78,34 @@
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/ALU - behavioral |home|hildor|Documents|TBD|processor_design|alu.vhd</ClosedNode>
          <ClosedNode>/adsu8_xilinx_tb - behavior |home|hildor|Documents|TBD|processor_design|adsu8_xilinx_tb.vhd</ClosedNode>
          <ClosedNode>/alu_flags_tb - behavior |home|hildor|Documents|TBD|processor_design|alu_flags_tb.vhd</ClosedNode>
          <ClosedNode>/alu_flags_tb - behavior |home|hildor|Workspace|processor_design|alu_flags_tb.vhd</ClosedNode>
+         <ClosedNode>/alu_tb - behavior |home|hildor|Documents|TBD|processor_design|alu_tb.vhd</ClosedNode>
          <ClosedNode>/csa_unit_tb - behavior |home|hildor|Workspace|processor_design|csa_unit_tb.vhd</ClosedNode>
          <ClosedNode>/full_adder - behavioral |home|hildor|Workspace|processor_design|full_adder.vhd</ClosedNode>
          <ClosedNode>/full_adder_tb - behavior |home|hildor|Workspace|processor_design|full_adder_tb.vhd</ClosedNode>
          <ClosedNode>/full_adder_tb - behavior |home|hildor|Workspace|processor_design|full_adder_tb.vhd/uut - full_adder - behavioral</ClosedNode>
          <ClosedNode>/logic_compound_tb - behavior |home|hildor|Documents|TBD|processor_design|logic_compound_tb.vhd</ClosedNode>
+         <ClosedNode>/logic_compound_tb - behavior |home|hildor|Documents|TBD|processor_design|logic_compound_tb.vhd/uut - logic_compound - behavioral</ClosedNode>
          <ClosedNode>/logic_compound_tb - behavior |home|hildor|Workspace|processor_design|logic_compound_tb.vhd</ClosedNode>
          <ClosedNode>/logical_unit_tb - behavior |home|hildor|Documents|TBD|processor_design|logical_unit_tb.vhd</ClosedNode>
          <ClosedNode>/logical_unit_tb - behavior |home|hildor|Workspace|processor_design|logical_unit_tb.vhd</ClosedNode>
          <ClosedNode>/r_shifter_8bit_tb - behavior |home|hildor|Documents|TBD|processor_design|r_shifter_8bit_tb.vhd</ClosedNode>
          <ClosedNode>/r_shifter_8bit_tb - behavior |home|hildor|Workspace|processor_design|r_shifter_8bit_tb.vhd</ClosedNode>
          <ClosedNode>/rca_8bit_tb - behavior |home|hildor|Workspace|processor_design|rca_8bit_tb.vhd</ClosedNode>
-         <ClosedNode>/result_mux_tb - behavior |home|hildor|Documents|TBD|processor_design|result_mux_tb.vhd</ClosedNode>
+         <ClosedNode>/test_tb - behavior |home|hildor|Documents|TBD|processor_design|result_mux_tb.vhd</ClosedNode>
+         <ClosedNode>/test_tb - behavior |home|hildor|Documents|TBD|processor_design|test_tb.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>xc4vfx12-12sf363</SelectedItem>
+         <SelectedItem>alu_tb - behavior (/home/hildor/Documents/TBD/processor_design/alu_tb.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001b0000000020000000000000000000000000200000064ffffffff000000810000000300000002000001b00000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>xc4vfx12-12sf363</CurrentItem>
+      <CurrentItem>alu_tb - behavior (/home/hildor/Documents/TBD/processor_design/alu_tb.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -119,13 +126,13 @@
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem/>
+         <SelectedItem>Simulate Behavioral Model</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f4000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f40000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000147000000010000000100000000000000000000000064ffffffff000000810000000000000001000001470000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem/>
+      <CurrentItem>Simulate Behavioral Model</CurrentItem>
    </ItemView>
    <SourceProcessView>000000ff0000000000000002000000ea000000de01000000060100000002</SourceProcessView>
    <CurrentView>Implementation</CurrentView>
@@ -135,12 +142,12 @@
          <ClosedNode>Design Utilities</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem/>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f4000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f40000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000147000000010000000100000000000000000000000064ffffffff000000810000000000000001000001470000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem/>
+      <CurrentItem></CurrentItem>
    </ItemView>
 </Project>

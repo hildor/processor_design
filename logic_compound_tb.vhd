@@ -41,21 +41,23 @@ ARCHITECTURE behavior OF logic_compound_tb IS
  
     COMPONENT logic_compound
     PORT(
-         OP_A : IN  bit_vector(7 downto 0);
-         OP_B : IN  bit_vector(7 downto 0);
-         OP_CODE : IN  bit_vector(2 downto 0);
-         RESULT_LOGIC : OUT  bit_vector(7 downto 0)
+         OP_A : IN  STD_LOGIC_vector(7 downto 0);
+         OP_B : IN  STD_LOGIC_vector(7 downto 0);
+         OP_CODE : IN  STD_LOGIC_vector(2 downto 0);
+         RESULT_LOGIC : OUT  STD_LOGIC_vector(7 downto 0);
+			FLAGS : OUT STD_LOGIC_VECTOR(4 downto 0)
         );
     END COMPONENT;
     
 
    --Inputs
-   signal OP_A : bit_vector(7 downto 0) := (others => '0');
-   signal OP_B : bit_vector(7 downto 0) := (others => '0');
-   signal OP_CODE : bit_vector(2 downto 0) := (others => '0');
+   signal OP_A : STD_LOGIC_vector(7 downto 0) := (others => '0');
+   signal OP_B : STD_LOGIC_vector(7 downto 0) := (others => '0');
+   signal OP_CODE : STD_LOGIC_vector(2 downto 0) := (others => '0');
 
  	--Outputs
-   signal RESULT_LOGIC : bit_vector(7 downto 0);
+   signal RESULT_LOGIC : STD_LOGIC_vector(7 downto 0);
+	signal FLAGS : STD_LOGIC_vector(4 downto 0);
 
  
 BEGIN
@@ -65,7 +67,8 @@ BEGIN
           OP_A => OP_A,
           OP_B => OP_B,
           OP_CODE => OP_CODE,
-          RESULT_LOGIC => RESULT_LOGIC
+          RESULT_LOGIC => RESULT_LOGIC,
+			 FLAGS => FLAGS
         );
 
    -- Stimulus process
@@ -76,10 +79,17 @@ BEGIN
 		-- insert stimulus here 
 		-- logical and
 		OP_CODE <= "010";
-		-- reset operators
-		OP_A <= "00000000";
-		OP_B <= "00000000";
+	
+		OP_A <= "01010101";
+		OP_B <= "10101010";
 		wait for 100 ns;
+		
+		OP_A <= "10101010";
+		OP_B <= "10101010";
+		wait for 100 ns;
+		
+		-- logical xor
+		OP_CODE <= "011";
 		
 		OP_A <= "01010101";
 		OP_B <= "10101010";
@@ -90,26 +100,7 @@ BEGIN
 		wait for 100 ns;
 		
 		-- logical or
-		OP_CODE <= "011";
-		-- reset operators
-		OP_A <= "00000000";
-		OP_B <= "00000000";
-		wait for 100 ns;
-		
-		OP_A <= "01010101";
-		OP_B <= "10101010";
-		wait for 100 ns;
-		
-		OP_A <= "10101010";
-		OP_B <= "10101010";
-		wait for 100 ns;
-		
-		-- logical xor
 		OP_CODE <= "100";
-		-- reset operators
-		OP_A <= "00000000";
-		OP_B <= "00000000";
-		wait for 100 ns;
 		
 		OP_A <= "01010101";
 		OP_B <= "10101010";
@@ -119,7 +110,7 @@ BEGIN
 		OP_B <= "10101010";
 		wait for 100 ns;
 		
-		-- logical OP_A not
+		-- logical OP_A com
 		OP_CODE <= "101";
 		-- reset operators
 		OP_A <= "00000000";
@@ -127,11 +118,6 @@ BEGIN
 		wait for 100 ns;
 		
 		OP_A <= "01010101";
-		OP_B <= "10101010";
-		wait for 100 ns;
-		
-		OP_A <= "10101010";
-		OP_B <= "10101010";
 		wait for 100 ns;
 		
       wait;

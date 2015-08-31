@@ -26,7 +26,11 @@ entity result_mux is
            ARITHMETIC : in  STD_LOGIC_VECTOR (7 downto 0);
            LOGIC : in  STD_LOGIC_VECTOR (7 downto 0);
            SHIFT : in  STD_LOGIC_VECTOR (7 downto 0);
-           ALU_R : out  STD_LOGIC_VECTOR (7 downto 0));
+			  FLAGS_AR : in STD_LOGIC_VECTOR (4 downto 0);
+			  FLAGS_LO : in STD_LOGIC_VECTOR (4 downto 0);
+			  FLAGS_SH : in STD_LOGIC_VECTOR (4 downto 0);
+           ALU_R : out  STD_LOGIC_VECTOR (7 downto 0);
+			  FLAGS : out  STD_LOGIC_VECTOR (4 downto 0));
 end result_mux;
 
 -- architecture describes behavior of module
@@ -43,6 +47,17 @@ begin
 					SHIFT when "110", 
 					SHIFT when "111",
 					"00000000" when others;
+	-- select FLAGS from OP_CODE
+	with OP_CODE select
+		FLAGS <= FLAGS_AR when "000",
+					FLAGS_AR when "001",
+					FLAGS_LO when "010",
+					FLAGS_LO when "011",
+					FLAGS_LO when "100",
+					FLAGS_LO when "101",
+					FLAGS_SH when "110", 
+					FLAGS_SH when "111",
+					"00000" when others;
 					
 end behavioral;
 

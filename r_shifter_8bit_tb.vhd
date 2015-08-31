@@ -4,7 +4,7 @@
 --
 -- Create Date:   00:08:23 08/15/2015
 -- Design Name:   
--- Module Name:   /home/hildor/Workspace/processor_design/r_shifter_8bit_tb.vhd
+-- Module Name:   /home/hildor/Workspace/processor_design/r_shifter_8STD_LOGIC_tb.vhd
 -- Project Name:  processor_design
 -- Target Device:  
 -- Tool versions:  
@@ -19,8 +19,8 @@
 -- Additional Comments:
 --
 -- Notes: 
--- This testbench has been automatically generated using types bit and
--- bit_vector for the ports of the unit under test.  Xilinx recommends
+-- This testbench has been automatically generated using types STD_LOGIC and
+-- STD_LOGIC_VECTOR for the ports of the unit under test.  Xilinx recommends
 -- that these types always be used for the top-level I/O of a design in order
 -- to guarantee that the testbench will bind correctly to the post-implementation 
 -- simulation model.
@@ -41,26 +41,30 @@ ARCHITECTURE behavior OF r_shifter_8bit_tb IS
  
     COMPONENT r_shifter_8bit
     PORT(
-         OP_A : IN  bit_vector(7 downto 1);
-         LSR_ASR : IN  bit;
-         RESULT_SHIFT : OUT  bit_vector(7 downto 0)
-        );
+         OP_A : IN  STD_LOGIC_VECTOR(7 downto 0);
+         ASR : IN  STD_LOGIC;
+         RESULT_SHIFT : OUT  STD_LOGIC_VECTOR(7 downto 0);
+			FLAGS : OUT  STD_LOGIC_VECTOR(4 downto 0)
+			);
     END COMPONENT;
   
    --Inputs
-   signal OP_A : bit_vector(7 downto 1) := (others => '0');
-   signal LSR_ASR : bit := '0';
+   signal OP_A : STD_LOGIC_VECTOR(7 downto 0) := "00000000";
+   signal ASR : STD_LOGIC := '0';
 
  	--Outputs
-   signal RESULT_SHIFT : bit_vector(7 downto 0);
+   signal RESULT_SHIFT : STD_LOGIC_VECTOR(7 downto 0);
+	signal FLAGS : STD_LOGIC_VECTOR(4 downto 0);
+	
 
  BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
    uut: r_shifter_8bit PORT MAP (
           OP_A => OP_A,
-          LSR_ASR => LSR_ASR,
-          RESULT_SHIFT => RESULT_SHIFT
+          ASR => ASR,
+          RESULT_SHIFT => RESULT_SHIFT,
+			 FLAGS => FLAGS
         );
 
    -- Stimulus process
@@ -70,13 +74,14 @@ ARCHITECTURE behavior OF r_shifter_8bit_tb IS
       wait for 100 ns;	
 		-- insert stimulus here 
 		-- LSR
-		LSR_ASR <= '0';
-		OP_A <= "1000111";
+		ASR <= '0';
+		OP_A <= "10001111";
 		wait for 100 ns;
 		
 		-- ASR
-		LSR_ASR <= '1';
-		OP_A <= "1000111";
+		ASR <= '1';
+		OP_A <= "10001111";
+		wait for 100 ns;
 		
       wait;
    end process;

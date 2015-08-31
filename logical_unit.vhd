@@ -36,8 +36,8 @@ begin
 		begin 
 			case OP_CODE is	
 				when "010" => RESULT <= OP_A and OP_B;
-				when "011" => RESULT <= OP_A or OP_B; 
-				when "100" => RESULT <= OP_A xor OP_B;
+				when "100" => RESULT <= OP_A or OP_B; 
+				when "011" => RESULT <= OP_A xor OP_B;
 				when "101" => RESULT <= not OP_A;
 				when others => RESULT <= '0';
 			end case;

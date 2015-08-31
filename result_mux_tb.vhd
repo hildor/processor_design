@@ -1,10 +1,10 @@
 --------------------------------------------------------------------------------
--- Company: 		EAH
--- Engineer:		Tobias Junge
+-- Company: 
+-- Engineer:
 --
--- Create Date:   13:32:35 08/19/2015
+-- Create Date:   14:02:21 08/31/2015
 -- Design Name:   
--- Module Name:   /home/hildor/Documents/TBD/processor_design/result_mux_tb.vhd
+-- Module Name:   /home/hildor/Documents/TBD/processor_design/test_tb.vhd
 -- Project Name:  processor_design
 -- Target Device:  
 -- Tool versions:  
@@ -19,8 +19,8 @@
 -- Additional Comments:
 --
 -- Notes: 
--- This testbench has been automatically generated using types BIT and
--- BIT_vector for the ports of the unit under test.  Xilinx recommends
+-- This testbench has been automatically generated using types std_logic and
+-- std_logic_vector for the ports of the unit under test.  Xilinx recommends
 -- that these types always be used for the top-level I/O of a design in order
 -- to guarantee that the testbench will bind correctly to the post-implementation 
 -- simulation model.
@@ -32,32 +32,40 @@ USE ieee.std_logic_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
  
-ENTITY result_mux_tb IS
-END result_mux_tb;
+ENTITY test_tb IS
+END test_tb;
  
-ARCHITECTURE behavior OF result_mux_tb IS 
+ARCHITECTURE behavior OF test_tb IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
     COMPONENT result_mux
     PORT(
-         OP_CODE : IN  BIT_vector(2 downto 0);
-         ARITHMETIC : IN  BIT_vector(7 downto 0);
-         LOGIC : IN  BIT_vector(7 downto 0);
-         SHIFT : IN  BIT_vector(7 downto 0);
-         ALU_R : OUT  BIT_vector(7 downto 0)
+         OP_CODE : IN  std_logic_vector(2 downto 0);
+         ARITHMETIC : IN  std_logic_vector(7 downto 0);
+         LOGIC : IN  std_logic_vector(7 downto 0);
+         SHIFT : IN  std_logic_vector(7 downto 0);
+         FLAGS_AR : IN  std_logic_vector(4 downto 0);
+         FLAGS_LO : IN  std_logic_vector(4 downto 0);
+         FLAGS_SH : IN  std_logic_vector(4 downto 0);
+         ALU_R : OUT  std_logic_vector(7 downto 0);
+         FLAGS : OUT  std_logic_vector(4 downto 0)
         );
     END COMPONENT;
     
 
    --Inputs
-   signal OP_CODE : BIT_vector(2 downto 0) := (others => '0');
-   signal ARITHMETIC : BIT_vector(7 downto 0) := (others => '0');
-   signal LOGIC : BIT_vector(7 downto 0) := (others => '0');
-   signal SHIFT : BIT_vector(7 downto 0) := (others => '0');
+   signal OP_CODE : std_logic_vector(2 downto 0) := (others => '0');
+   signal ARITHMETIC : std_logic_vector(7 downto 0) := (others => '0');
+   signal LOGIC : std_logic_vector(7 downto 0) := (others => '0');
+   signal SHIFT : std_logic_vector(7 downto 0) := (others => '0');
+   signal FLAGS_AR : std_logic_vector(4 downto 0) := (others => '0');
+   signal FLAGS_LO : std_logic_vector(4 downto 0) := (others => '0');
+   signal FLAGS_SH : std_logic_vector(4 downto 0) := (others => '0');
 
  	--Outputs
-   signal ALU_R : BIT_vector(7 downto 0);
+   signal ALU_R : std_logic_vector(7 downto 0);
+   signal FLAGS : std_logic_vector(4 downto 0);
 
 BEGIN
  
@@ -67,17 +75,26 @@ BEGIN
           ARITHMETIC => ARITHMETIC,
           LOGIC => LOGIC,
           SHIFT => SHIFT,
-          ALU_R => ALU_R
+          FLAGS_AR => FLAGS_AR,
+          FLAGS_LO => FLAGS_LO,
+          FLAGS_SH => FLAGS_SH,
+          ALU_R => ALU_R,
+          FLAGS => FLAGS
         );
+
 
    -- Stimulus process
    stim_proc: process
-   begin	
-		-- insert stimulus here
-		-- set input values
+   begin		
+      -- hold reset state for 100 ns.
+      wait for 100 ns;	
+		-- insert stimulus here 
 		ARITHMETIC <= "00000001";
-		LOGIC <= "00000100";
-		SHIFT <= "00010000";
+		LOGIC <= "00000010";
+		SHIFT <= "00000011";
+		FLAGS_AR <= "00001";
+		FLAGS_LO <= "00010";
+		FLAGS_SH <= "00011";
 		wait for 100 ns;
 		
 		-- arithmetic output
@@ -106,7 +123,7 @@ BEGIN
 		
 		OP_CODE <= "111";
 		wait for 100 ns;
-		
+	
       wait;
    end process;
 

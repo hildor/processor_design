@@ -28,6 +28,7 @@ entity adsu8_xilinx is
            FLAGS : out  STD_LOGIC_VECTOR (4 downto 0));
 end adsu8_xilinx;
 
+-- architecture describes behavior of module
 architecture behavioral of adsu8_xilinx is
 -- sub-module is declared
 	component adsu8_xilinx_unit

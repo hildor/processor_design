@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-08-31T14:07:35</DateModified>
-  <ModuleName>result_mux</ModuleName>
-  <SummaryTimeStamp>2015-08-31T14:01:34</SummaryTimeStamp>
+  <DateModified>2015-08-31T15:20:15</DateModified>
+  <ModuleName>ALU</ModuleName>
+  <SummaryTimeStamp>2015-08-31T15:05:33</SummaryTimeStamp>
   <SavedFilePath>/home/hildor/Documents/TBD/processor_design/iseconfig/r_shifter_8bit.xreport</SavedFilePath>
   <ImplementationReportsDirectory>/home/hildor/Documents/TBD/processor_design/</ImplementationReportsDirectory>
-  <DateInitialized>2015-08-31T14:01:21</DateInitialized>
+  <DateInitialized>2015-08-31T15:04:59</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

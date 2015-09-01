@@ -29,7 +29,7 @@ entity PC is
 end PC;
 
 architecture behavioral of PC is
--- additional register
+-- register
 	signal REG :  STD_LOGIC_VECTOR(9 downto 0) := "0000000000";
 
 begin

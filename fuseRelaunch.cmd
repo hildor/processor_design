@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/hildor/Documents/TBD/processor_design/pc_tb_isim_beh.exe" -prj "/home/hildor/Documents/TBD/processor_design/pc_tb_beh.prj" "work.pc_tb" 
+-intstyle "ise" -incremental -lib "secureip" -o "/home/hildor/Documents/TBD/processor_design/rf_tb_isim_beh.exe" -prj "/home/hildor/Documents/TBD/processor_design/rf_tb_beh.prj" "work.rf_tb" 

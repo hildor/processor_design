@@ -28,7 +28,7 @@ entity SREG is
 end SREG;
 
 architecture behavioral of SREG is
--- additonal register
+-- register
 signal REG :  STD_LOGIC_VECTOR(4 downto 0) := "00000";
 
 begin

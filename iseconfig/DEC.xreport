@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-09-02T15:20:40</DateModified>
-  <ModuleName>test</ModuleName>
-  <SummaryTimeStamp>2015-09-02T15:16:58</SummaryTimeStamp>
+  <DateModified>2015-09-04T20:30:06</DateModified>
+  <ModuleName>RF</ModuleName>
+  <SummaryTimeStamp>2015-09-04T20:12:29</SummaryTimeStamp>
   <SavedFilePath>/home/hildor/Documents/TBD/processor_design/iseconfig/DEC.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/hildor/Documents/TBD/processor_design</ImplementationReportsDirectory>
-  <DateInitialized>2015-09-02T15:11:17</DateInitialized>
+  <ImplementationReportsDirectory>/home/hildor/Documents/TBD/processor_design/</ImplementationReportsDirectory>
+  <DateInitialized>2015-09-04T20:30:06</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

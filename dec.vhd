@@ -8,7 +8,7 @@
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
--- Description: 		decoder for control unit
+-- Description: 		decoder for control unit that translates the instructionset
 --
 -- Dependencies: 
 --
@@ -70,14 +70,13 @@ begin
 										ADDR_OP_B 	<= "00000";				
 										OP_CODE  	<= OP_NOP;	
 										OP_IMMED		<= IMMED_NULL;
-										WE_SREG 		<= "00000"; -- S V N C Z
+										WE_SREG 		<= "00000"; -- S V N Z C
 										WE_PC 	   <= '0';	
 										WE_RF 		<= '0';
 										WE_MMU 		<= '0';
 										SEL_IMMED	<= '0';
 										SEL_MOV		<= '0';
 										SEL_RF_IN 	<= '0';
-										
 					-- LSL (add of two equal values result in left shift -> also known as multiplied by 2) 	
 					-- ADD
 					when "11" => 	ADDR_PC		<= "0000000000";
@@ -85,7 +84,7 @@ begin
 										ADDR_OP_B 	<= INS(9) & INS(3 downto 0);			
 										OP_CODE  	<= OP_ADD;	
 										OP_IMMED		<= IMMED_NULL;
-										WE_SREG 		<= "11111"; -- S V N C Z
+										WE_SREG 		<= "11111"; -- S V N Z C
 										WE_PC 	   <= '0';	
 										WE_RF 		<= '1';
 										WE_MMU 		<= '0';
@@ -98,7 +97,7 @@ begin
 										ADDR_OP_B 	<= "00000";				
 										OP_CODE  	<= OP_NOP;	
 										OP_IMMED		<= IMMED_NULL;
-										WE_SREG 		<= "00000"; -- S V N C Z
+										WE_SREG 		<= "00000"; -- S V N Z C
 										WE_PC 	   <= '0';	
 										WE_RF 		<= '0';
 										WE_MMU 		<= '0';
@@ -118,7 +117,7 @@ begin
 										ADDR_OP_B 	<= INS(9) & INS(3 downto 0);				
 										OP_CODE  	<= OP_SUB;	
 										OP_IMMED		<= IMMED_NULL;
-										WE_SREG 		<= "11111"; -- S V N C Z
+										WE_SREG 		<= "11111"; -- S V N Z C
 										WE_PC 	   <= '0';	
 										WE_RF 		<= '0';
 										WE_MMU 		<= '0';
@@ -131,7 +130,7 @@ begin
 										ADDR_OP_B 	<= INS(9) & INS(3 downto 0);					
 										OP_CODE  	<= OP_SUB;	
 										OP_IMMED		<= IMMED_NULL;
-										WE_SREG 		<= "11111"; -- S V N C Z
+										WE_SREG 		<= "11111"; -- S V N Z C
 										WE_PC 	   <= '0';	
 										WE_RF 		<= '1';
 										WE_MMU 		<= '0';
@@ -145,7 +144,7 @@ begin
 										ADDR_OP_B 	<= "00000";				
 										OP_CODE  	<= OP_NOP;	
 										OP_IMMED		<= IMMED_NULL;
-										WE_SREG 		<= "00000"; -- S V N C Z
+										WE_SREG 		<= "00000"; -- S V N Z C
 										WE_PC 	   <= '0';	
 										WE_RF 		<= '0';
 										WE_MMU 		<= '0';
@@ -165,7 +164,7 @@ begin
 										ADDR_OP_B 	<= INS(9) & INS(3 downto 0);					
 										OP_CODE  	<= OP_AND;	
 										OP_IMMED		<= IMMED_NULL;
-										WE_SREG 		<= "11110"; -- S V N C Z
+										WE_SREG 		<= "11110"; -- S V N Z C
 										WE_PC 	   <= '0';	
 										WE_RF 		<= '1';
 										WE_MMU 		<= '0';
@@ -178,7 +177,7 @@ begin
 										ADDR_OP_B 	<= INS(9) & INS(3 downto 0);					
 										OP_CODE  	<= OP_EOR;	
 										OP_IMMED		<= IMMED_NULL;
-										WE_SREG 		<= "11110"; -- S V N C Z
+										WE_SREG 		<= "11110"; -- S V N Z C
 										WE_PC 	   <= '0';	
 										WE_RF 		<= '1';
 										WE_MMU 		<= '0';
@@ -191,7 +190,7 @@ begin
 										ADDR_OP_B 	<= INS(9) & INS(3 downto 0);				
 										OP_CODE  	<= OP_OR;	
 										OP_IMMED		<= IMMED_NULL;
-										WE_SREG 		<= "11110"; -- S V N C Z
+										WE_SREG 		<= "11110"; -- S V N Z C
 										WE_PC 	   <= '0';	
 										WE_RF 		<= '1';
 										WE_MMU 		<= '0';
@@ -204,7 +203,7 @@ begin
 										ADDR_OP_B 	<= INS(9) & INS(3 downto 0);					
 										OP_CODE  	<= OP_NOP;	
 										OP_IMMED		<= IMMED_NULL;
-										WE_SREG 		<= "00000"; -- S V N C Z
+										WE_SREG 		<= "00000"; -- S V N Z C
 										WE_PC 	   <= '0';	
 										WE_RF 		<= '1';
 										WE_MMU 		<= '0';
@@ -223,7 +222,7 @@ begin
 								ADDR_OP_B 	<= "00000";					
 								OP_CODE  	<= OP_SUB;	
 								OP_IMMED		<= INS(11 downto 8) & INS(3 downto 0); -- K -> constant
-								WE_SREG 		<= "11111"; -- S V N C Z
+								WE_SREG 		<= "11111"; -- S V N Z C
 								WE_PC 	   <= '0';	
 								WE_RF 		<= '0';
 								WE_MMU 		<= '0';
@@ -236,7 +235,7 @@ begin
 								ADDR_OP_B 	<= "00000";					
 								OP_CODE  	<= OP_SUB;	
 								OP_IMMED		<= INS(11 downto 8) & INS(3 downto 0); -- K -> constant
-								WE_SREG 		<= "11111"; -- S V N C Z
+								WE_SREG 		<= "11111"; -- S V N Z C
 								WE_PC 	   <= '0';	
 								WE_RF 		<= '1';
 								WE_MMU 		<= '0';
@@ -249,7 +248,7 @@ begin
 								ADDR_OP_B 	<= "00000";					
 								OP_CODE  	<= OP_OR;	
 								OP_IMMED		<= INS(11 downto 8) & INS(3 downto 0); -- K -> constant
-								WE_SREG 		<= "11110"; -- S V N C Z
+								WE_SREG 		<= "11110"; -- S V N Z C
 								WE_PC 	   <= '0';	
 								WE_RF 		<= '1';
 								WE_MMU 		<= '0';
@@ -262,7 +261,7 @@ begin
 								ADDR_OP_B 	<= "00000";					
 								OP_CODE  	<= OP_AND;	
 								OP_IMMED		<= INS(11 downto 8) & INS(3 downto 0); -- K -> constant
-								WE_SREG 		<= "11110"; -- S V N C Z
+								WE_SREG 		<= "11110"; -- S V N Z C
 								WE_PC 	   <= '0';	
 								WE_RF 		<= '1';
 								WE_MMU 		<= '0';
@@ -277,7 +276,7 @@ begin
 					ADDR_OP_B 	<= "00000";
 					OP_CODE  	<= OP_NOP;	
 					OP_IMMED		<= IMMED_NULL;
-					WE_SREG 		<= "00000"; -- S V N C Z
+					WE_SREG 		<= "00000"; -- S V N Z C
 					WE_PC 	   <= '0';	
 					WE_RF 		<= '1';
 					WE_MMU 		<= '0';
@@ -291,7 +290,7 @@ begin
 					ADDR_OP_B 	<= INS(8 downto 4);					
 					OP_CODE  	<= OP_ADD;	
 					OP_IMMED		<= IMMED_NULL;
-					WE_SREG 		<= "00000"; -- S V N C Z
+					WE_SREG 		<= "00000"; -- S V N Z C
 					WE_PC 	   <= '0';	
 					WE_RF 		<= '0';
 					WE_MMU 		<= '1';
@@ -305,7 +304,7 @@ begin
 					ADDR_OP_B 	<= "00000";					
 					OP_CODE  	<= OP_NOP;	
 					OP_IMMED		<= IMMED_NULL;
-					WE_SREG 		<= "00000"; -- S V N C Z
+					WE_SREG 		<= "00000"; -- S V N Z C
 					WE_PC 	   <= '0';	
 					WE_RF 		<= '0';
 					WE_MMU 		<= '0';
@@ -325,7 +324,7 @@ begin
 										ADDR_OP_B 	<= "00000";				
 										OP_CODE  	<= OP_COM;	
 										OP_IMMED		<= IMMED_NULL;
-										WE_SREG 		<= "11111"; -- S V N C Z
+										WE_SREG 		<= "11111"; -- S V N Z C
 										WE_PC 	   <= '0';	
 										WE_RF 		<= '1';
 										WE_MMU 		<= '0';
@@ -338,7 +337,7 @@ begin
 										ADDR_OP_B 	<= "00000";				
 										OP_CODE  	<= OP_ASR;	
 										OP_IMMED		<= IMMED_NULL;
-										WE_SREG 		<= "11111"; -- S V N C Z
+										WE_SREG 		<= "11111"; -- S V N Z C
 										WE_PC 	   <= '0';	
 										WE_RF 		<= '1';
 										WE_MMU 		<= '0';
@@ -351,7 +350,7 @@ begin
 										ADDR_OP_B 	<= "00000";				
 										OP_CODE  	<= OP_SUB;	
 										OP_IMMED		<= "00000001";
-										WE_SREG 		<= "11101"; -- S V N C Z
+										WE_SREG 		<= "11110"; -- S V N Z C
 										WE_PC 	   <= '0';	
 										WE_RF 		<= '1';
 										WE_MMU 		<= '0';
@@ -364,7 +363,7 @@ begin
 										ADDR_OP_B 	<= "00000";				
 										OP_CODE  	<= OP_ADD;	
 										OP_IMMED		<= "00000001";
-										WE_SREG 		<= "11101"; -- S V N C Z
+										WE_SREG 		<= "11110"; -- S V N Z C
 										WE_PC 	   <= '0';	
 										WE_RF 		<= '1';
 										WE_MMU 		<= '0';
@@ -377,7 +376,7 @@ begin
 										ADDR_OP_B 	<= "00000";				
 										OP_CODE  	<= OP_LSR;	
 										OP_IMMED		<= IMMED_NULL;
-										WE_SREG 		<= "11111"; -- S V N C Z
+										WE_SREG 		<= "11111"; -- S V N Z C
 										WE_PC 	   <= '0';	
 										WE_RF 		<= '1';
 										WE_MMU 		<= '0';
@@ -390,7 +389,7 @@ begin
 										ADDR_OP_B 	<= "00000";				
 										OP_CODE  	<= OP_NOP;	
 										OP_IMMED		<= IMMED_NULL;
-										WE_SREG 		<= "00000"; -- S V N C Z
+										WE_SREG 		<= "00000"; -- S V N Z C
 										WE_PC 	   <= '0';	
 										WE_RF 		<= '0';
 										WE_MMU 		<= '0';
@@ -407,7 +406,7 @@ begin
 								ADDR_OP_B 	<= "00000";				
 								OP_CODE  	<= OP_NOP;	
 								OP_IMMED		<= IMMED_NULL;
-								WE_SREG 		<= "00000"; -- S V N C Z
+								WE_SREG 		<= "00000"; -- S V N Z C
 								WE_PC 	   <= '1';	
 								WE_RF 		<= '0';
 								WE_MMU 		<= '0';
@@ -420,7 +419,7 @@ begin
 								ADDR_OP_B 	<= "00000";
 								OP_CODE  	<= OP_NOP;	
 								OP_IMMED		<= INS(11 downto 8) & INS(3 downto 0); -- K -> constant
-								WE_SREG 		<= "00000"; -- S V N C Z
+								WE_SREG 		<= "00000"; -- S V N Z C
 								WE_PC 	   <= '0';	
 								WE_RF 		<= '1';
 								WE_MMU 		<= '0';
@@ -446,7 +445,7 @@ begin
 						ADDR_OP_B 	<= "00000";				
 						OP_CODE  	<= OP_NOP;	
 						OP_IMMED		<= IMMED_NULL;
-						WE_SREG 		<= "00000"; -- S V N C Z
+						WE_SREG 		<= "00000"; -- S V N Z C
 						WE_PC 	   <= '1';	
 						WE_RF 		<= '0';
 						WE_MMU 		<= '0';
@@ -459,7 +458,7 @@ begin
 						ADDR_OP_B 	<= "00000";				
 						OP_CODE  	<= OP_NOP;	
 						OP_IMMED		<= IMMED_NULL;
-						WE_SREG 		<= "00000"; -- S V N C Z
+						WE_SREG 		<= "00000"; -- S V N Z C
 						WE_PC 	   <= '0';	
 						WE_RF 		<= '0';
 						WE_MMU 		<= '0';
@@ -481,7 +480,7 @@ begin
 						ADDR_OP_B 	<= "00000";				
 						OP_CODE  	<= OP_NOP;	
 						OP_IMMED		<= IMMED_NULL;
-						WE_SREG 		<= "00000"; -- S V N C Z
+						WE_SREG 		<= "00000"; -- S V N Z C
 						WE_PC 	   <= '1';	
 						WE_RF 		<= '0';
 						WE_MMU 		<= '0';
@@ -494,7 +493,7 @@ begin
 						ADDR_OP_B 	<= "00000";				
 						OP_CODE  	<= OP_NOP;	
 						OP_IMMED		<= IMMED_NULL;
-						WE_SREG 		<= "00000"; -- S V N C Z
+						WE_SREG 		<= "00000"; -- S V N Z C
 						WE_PC 	   <= '0';	
 						WE_RF 		<= '0';
 						WE_MMU 		<= '0';
@@ -508,7 +507,7 @@ begin
 					ADDR_OP_B 	<= "00000";				
 					OP_CODE  	<= OP_NOP;	
 					OP_IMMED		<= IMMED_NULL;
-					WE_SREG 		<= "00000"; -- S V N C Z
+					WE_SREG 		<= "00000"; -- S V N Z C
 					WE_PC 	   <= '0';	
 					WE_RF 		<= '0';
 					WE_MMU 		<= '0';
@@ -522,7 +521,7 @@ begin
 				ADDR_OP_B 	<= "00000";				
 				OP_CODE  	<= OP_NOP;	
 				OP_IMMED		<= IMMED_NULL;
-				WE_SREG 		<= "00000"; -- S V N C Z
+				WE_SREG 		<= "00000"; -- S V N Z C
 				WE_PC 	   <= '0';	
 				WE_RF 		<= '0';
 				WE_MMU 		<= '0';

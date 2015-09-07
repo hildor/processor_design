@@ -19,8 +19,6 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_STD.ALL;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
 -- entity of module
 entity MMU is
     Port ( DATA_PTR : in  STD_LOGIC_VECTOR (15 downto 0);
@@ -46,7 +44,7 @@ process(DATA_PTR,DATA_IN,DATA_IN_SRAM,DATA_IN_PORT,WE)
 	begin
 		
 		if ((DATA_PTR < SRAM) and (WE = '1')) then 
-			-- forward to port
+			-- write port
 			ADDR_SRAM <= "000000000";
 			ADDR_PORT <= DATA_PTR(6 downto 0);
 			DATA_OUT <= "00000000";
@@ -55,7 +53,7 @@ process(DATA_PTR,DATA_IN,DATA_IN_SRAM,DATA_IN_PORT,WE)
 			WE_SRAM <= '0';
 			WE_PORT <= '1';
 		elsif ((DATA_PTR = SRAM) and (WE = '0')) then
-			-- forward from port
+			-- read port
 			ADDR_SRAM <= "000000000";
 			ADDR_PORT <= DATA_PTR(6 downto 0);
 			DATA_OUT <= DATA_IN_PORT;
@@ -64,7 +62,7 @@ process(DATA_PTR,DATA_IN,DATA_IN_SRAM,DATA_IN_PORT,WE)
 			WE_SRAM <= '0';
 			WE_PORT <= '0';
 		elsif ((DATA_PTR >= SRAM) and (WE = '1')) then 
-			-- forward to sram
+			-- write sram
 			ADDR_SRAM <= DATA_PTR(8 downto 0);
 			ADDR_PORT <= "0000000";
 			DATA_OUT <= "00000000";
@@ -73,7 +71,7 @@ process(DATA_PTR,DATA_IN,DATA_IN_SRAM,DATA_IN_PORT,WE)
 			WE_SRAM <= '1';
 			WE_PORT <= '0';
 		elsif ((DATA_PTR >= SRAM) and (WE = '0')) then
-			-- forward from sram
+			-- read sram
 			ADDR_SRAM <= DATA_PTR(8 downto 0);
 			ADDR_PORT <= "0000000";
 			DATA_OUT <= DATA_IN_SRAM;

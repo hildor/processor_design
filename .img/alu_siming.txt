@@ -1,0 +1,27 @@
+ALU
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 1175 / 13
+-------------------------------------------------------------------------
+Delay:               8.675ns (Levels of Logic = 9)
+  Source:            OP_CODE<2> (PAD)
+  Destination:       FLAGS<0> (PAD)
+
+  Data Path: OP_CODE<2> to FLAGS<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            36   0.754   0.867  OP_CODE_2_IBUF (OP_CODE_2_IBUF)
+     LUT3:I1->O            8   0.147   0.577  LOGIC/LU0/RESULT41 (LOGIC/N111)
+     LUT4:I1->O            1   0.147   0.388  LOGIC/LU4/RESULT52_SW0 (N38)
+     LUT4:I3->O            3   0.147   0.565  LOGIC/LU4/RESULT52 (SIG_RESULT_LO<4>)
+     LUT4:I0->O            1   0.147   0.388  LOGIC/SIG_FLAGS_0_cmp_eq000025 (LOGIC/SIG_FLAGS_0_cmp_eq000025)
+     LUT4:I3->O            2   0.147   0.449  LOGIC/SIG_FLAGS_0_cmp_eq000027 (SIG_FLAGS_LO<0>)
+     LUT4:I2->O            1   0.147   0.000  RESULT/Mmux_FLAGS3151_G (N69)
+     MUXF5:I1->O           1   0.284   0.266  RESULT/Mmux_FLAGS3151 (FLAGS_0_OBUF)
+     OBUF:I->O                 3.255          FLAGS_0_OBUF (FLAGS<0>)
+    ----------------------------------------
+    Total                      8.675ns (5.175ns logic, 3.500ns route)
+                                       (59.7% logic, 40.3% route)
+
+=========================================================================

@@ -77,8 +77,8 @@ begin
 	ADSU8_UNIT6 : adsu8_xilinx_unit_d port map (OP_A(6),OP_B(6),SIG_SUB_INV,SIG_COUT(5),SIG_SUM(6),SIG_COUT_O,SIG_COUT(6));
 	ADSU8_UNIT7 : adsu8_xilinx_unit port map (OP_A(7),OP_B(7),SIG_SUB_INV,SIG_COUT(6),SIG_SUM(7),SIG_COUT(7));
 -- genrate flags
-	SIG_FLAGS(0) <= '1' when SIG_SUM = "00000000" else '0';	-- Z
-	SIG_FLAGS(1) <= SIG_COUT(7);										-- C
+	SIG_FLAGS(0) <= SIG_COUT(7);										-- C
+	SIG_FLAGS(1) <= '1' when SIG_SUM = "00000000" else '0';	-- Z
 	SIG_FLAGS(2) <= SIG_SUM(7);										-- N
 	SIG_FLAGS(3) <= SIG_COUT(7) xor SIG_COUT_O; 					-- V
 	SIG_FLAGS(4) <= SIG_SUM(7) xor SIG_FLAGS(3);					-- S

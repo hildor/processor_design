@@ -53,8 +53,8 @@ begin
 	LU1 : logical_unit port map (OP_A(1),OP_B(1),OP_CODE,SIG_RESULT_LOGIC(1));
 	LU0 : logical_unit port map (OP_A(0),OP_B(0),OP_CODE,SIG_RESULT_LOGIC(0));
 -- generate flags
-	SIG_FLAGS(0) <= '1' when SIG_RESULT_LOGIC = "00000000" else '0';		-- Z
-	with OP_CODE select SIG_FLAGS(1) <= '1' when "101", '0' when others;	-- C - only set when COM active
+	with OP_CODE select SIG_FLAGS(0) <= '1' when "101", '0' when others;	-- C - only set when COM active
+	SIG_FLAGS(1) <= '1' when SIG_RESULT_LOGIC = "00000000" else '0';		-- Z
 	SIG_FLAGS(2) <= SIG_RESULT_LOGIC(7);											-- N
 	SIG_FLAGS(3) <= '0'; 																-- V
 	SIG_FLAGS(4) <= SIG_RESULT_LOGIC(7) xor SIG_FLAGS(3);						-- S

@@ -48,8 +48,8 @@ begin
 	SIG_RESULT_SHIFT(6) <= OP_A(7);
 	SIG_RESULT_SHIFT(7) <= SIG_MSB;
 -- generate flags
-	SIG_FLAGS(0) <= '1' when SIG_RESULT_SHIFT = "00000000" else '0';		-- Z
-	SIG_FLAGS(1) <= OP_A(0); 															-- C - lsb of rd is set befor shift
+	SIG_FLAGS(0) <= OP_A(0); 															-- C - lsb of rd is set befor shift
+	SIG_FLAGS(1) <= '1' when SIG_RESULT_SHIFT = "00000000" else '0';		-- Z
 	SIG_FLAGS(2) <= SIG_MSB;															-- N - msb when asr
 	SIG_FLAGS(3) <= SIG_FLAGS(1) xor SIG_FLAGS(2); 								-- V
 	SIG_FLAGS(4) <= SIG_MSB xor SIG_FLAGS(3);										-- S

@@ -1,0 +1,16 @@
+# Output products list for <IM>
+IM/doc/c_shift_ram_v11_0_readme.txt
+IM/doc/c_shift_ram_v11_0_vinfo.html
+IM/doc/ds228_shift_ram.pdf
+IM.asy
+IM.gise
+IM.mif
+IM.ngc
+IM.sym
+IM.vhd
+IM.vho
+IM.xco
+IM.xise
+IM_flist.txt
+IM_xmdf.tcl
+_xmsgs/pn_parser.xmsgs

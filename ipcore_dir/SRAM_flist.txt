@@ -1,0 +1,15 @@
+# Output products list for <SRAM>
+SRAM/doc/c_shift_ram_v11_0_readme.txt
+SRAM/doc/c_shift_ram_v11_0_vinfo.html
+SRAM/doc/ds228_shift_ram.pdf
+SRAM.asy
+SRAM.gise
+SRAM.ngc
+SRAM.sym
+SRAM.vhd
+SRAM.vho
+SRAM.xco
+SRAM.xise
+SRAM_flist.txt
+SRAM_xmdf.tcl
+_xmsgs/pn_parser.xmsgs

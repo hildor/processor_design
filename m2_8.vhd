@@ -2,13 +2,13 @@
 -- Company: 			EAH 
 -- Engineer: 			Tobias Junge 
 -- 
--- Create Date:    	17:31:45 09/07/2015 
+-- Create Date:    	23:33:03 09/07/2015 
 -- Design Name: 		processor_design
--- Module Name:    	LBTHB - behavioral 
--- Project Name: 	 
+-- Module Name:    	M2_8 - behavioral 
+-- Project Name: 
 -- Target Devices: 	XUP Virtex-II Pro Development System (Virtex2P)
 -- Tool versions: 
--- Description:   	twist lower and higher byte of instruction
+-- Description: 		8-bit multiplexer
 --
 -- Dependencies: 
 --
@@ -20,14 +20,18 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 -- entity of module
-entity LBTHB is
-    Port ( INS_HILO: in  STD_LOGIC_VECTOR (15 downto 0);
-           INS_LOHI : out  STD_LOGIC_VECTOR (15 downto 0));
-end LBTHB;
+entity M2_8 is
+    Port ( D0 : in  STD_LOGIC_VECTOR (7 downto 0);
+           D1 : in  STD_LOGIC_VECTOR (7 downto 0);
+           S : in  STD_LOGIC;
+           O : out  STD_LOGIC_VECTOR (7 downto 0));
+end M2_8;
 
-architecture behavioral of LBTHB is
+-- architecture describes behavior of module
+architecture behavioral of M2_8 is
+
 begin
-	-- twist lower and higher byte of instruction
-	INS_LOHI <= INS_HILO(7 downto 0) & INS_HILO(15 downto 8);
+	O <= D0 when S = '0' else D1;
+			
 end behavioral;
 

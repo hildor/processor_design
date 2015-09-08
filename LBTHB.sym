@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbol version="7" name="LBTHB">
+    <symboltype>BLOCK</symboltype>
+    <timestamp>2015-9-7T20:28:58</timestamp>
+    <pin polarity="Output" x="368" y="64" name="INS_LOHI(15:0)" />
+    <pin polarity="Input" x="128" y="-128" name="INS_HILO(15:0)" />
+    <graph>
+        <rect width="368" x="64" y="-64" height="64" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="424" y="-32" type="pin INS_LOHI(15:0)" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-32" type="pin INS_HILO(15:0)" />
+        <line x2="368" y1="0" y2="64" x1="368" />
+        <rect width="24" x="356" y="0" height="64" />
+        <rect width="24" x="116" y="-128" height="64" />
+        <line x2="128" y1="-64" y2="-128" x1="128" />
+        <attrtext style="alignment:BCENTER;fontsize:56;fontname:Arial" attrname="SymbolName" x="288" y="-68" type="symbol" />
+    </graph>
+</symbol>

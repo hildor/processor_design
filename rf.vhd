@@ -6,7 +6,7 @@
 -- Design Name: 		processor_design
 -- Module Name:    	RF - behavioral 
 -- Project Name: 		
--- Target Devices: 
+-- Target Devices: 	XUP Virtex-II Pro Development System (Virtex2P)
 -- Tool versions: 
 -- Description: 		32 bit Register file which supply values for alu operations
 --
@@ -26,7 +26,7 @@ entity RF is
            OP_IN : in  STD_LOGIC_VECTOR (7 downto 0);
            WE : in  STD_LOGIC;
            CLK : in  STD_LOGIC;
-           Z_PTR : out  STD_LOGIC_VECTOR (15 downto 0);
+           DATA_PTR : out  STD_LOGIC_VECTOR (15 downto 0);
            OP_A : out  STD_LOGIC_VECTOR (7 downto 0);
            OP_B : out  STD_LOGIC_VECTOR (7 downto 0));
 end RF;
@@ -70,8 +70,8 @@ signal REG31 : STD_LOGIC_VECTOR(7 downto 0) := "00000000";
 
 begin
 -- set address for memory access
-	Z_PTR(7 downto 0) <= REG30;
-	Z_PTR(15 downto 8) <= REG31;
+	DATA_PTR(7 downto 0) <= REG30;
+	DATA_PTR(15 downto 8) <= REG31;
 
 -- forward register value to operand output
 	-- map operand a

@@ -6,7 +6,7 @@
 -- Design Name: 		processor_design
 -- Module Name:    	PC - behavioral 
 -- Project Name: 
--- Target Devices: 
+-- Target Devices: 	XUP Virtex-II Pro Development System (Virtex2P)
 -- Tool versions: 
 -- Description: 		program counter
 --

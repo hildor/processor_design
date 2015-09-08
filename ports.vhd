@@ -6,7 +6,7 @@
 -- Design Name: 		processor_design
 -- Module Name:    	PORTS - behavioral 
 -- Project Name: 
--- Target Devices: 
+-- Target Devices: 	XUP Virtex-II Pro Development System (Virtex2P)
 -- Tool versions: 
 -- Description: 		port register management
 --
@@ -21,8 +21,8 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 -- entity of module
 entity PORTS is
-    Port ( ADDR_PORT : in  STD_LOGIC_VECTOR (7 downto 0);
-           DATA_IN : in  STD_LOGIC_VECTOR (4 downto 0);
+    Port ( ADDR_PORT : in  STD_LOGIC_VECTOR (6 downto 0);
+           DATA_IN : in  STD_LOGIC_VECTOR (3 downto 0);
 			  WE :  in STD_LOGIC;
 			  CLK : in  STD_LOGIC;
            PBT : in  STD_LOGIC_VECTOR (4 downto 0);
@@ -33,8 +33,8 @@ end PORTS;
 architecture behavioral of PORTS is
 -- defines for better code handling
 -- PORTC and PIND (low active)
-constant PORTC : STD_LOGIC_VECTOR (7 downto 0):= x"35";
-constant PIND : STD_LOGIC_VECTOR (7 downto 0):= x"30";
+constant PORTC : STD_LOGIC_VECTOR (6 downto 0):= "0110101"; -- 0x35
+constant PIND : STD_LOGIC_VECTOR (6 downto 0):= "0110000"; -- 0x30
 constant RESET_PBT : STD_LOGIC_VECTOR(4 downto 0) := "00000"; 
 -- register for ports (high active)
 -- ######################################################
@@ -60,6 +60,8 @@ begin
 			DATA_OUT <= REG_PBT;
 		elsif (ADDR_PORT = PORTC and WE = '0') then
 			DATA_OUT <= '0' & REG_LED;
+		else
+			DATA_OUT <= "00000";
 		end if;
 	end process;
 

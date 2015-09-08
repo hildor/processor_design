@@ -6,7 +6,7 @@
 -- Design Name: 		processor_design
 -- Module Name:    	MMU - behavioral 
 -- Project Name: 
--- Target Devices: 
+-- Target Devices: 	XUP Virtex-II Pro Development System (Virtex2P)
 -- Tool versions: 
 -- Description: 		memory management unit controls external sram and ports
 --
@@ -24,13 +24,13 @@ entity MMU is
     Port ( DATA_PTR : in  STD_LOGIC_VECTOR (15 downto 0);
            DATA_IN : in  STD_LOGIC_VECTOR (7 downto 0);
 			  DATA_IN_SRAM : in  STD_LOGIC_VECTOR (7 downto 0);
-			  DATA_IN_PORT :  STD_LOGIC_VECTOR (7 downto 0);
+			  DATA_IN_PORT :  STD_LOGIC_VECTOR (4 downto 0);
 			  WE : in  STD_LOGIC;
 			  ADDR_SRAM : out  STD_LOGIC_VECTOR (8 downto 0);
 			  ADDR_PORT : out  STD_LOGIC_VECTOR (6 downto 0);
            DATA_OUT : out  STD_LOGIC_VECTOR (7 downto 0);
            DATA_OUT_SRAM : out  STD_LOGIC_VECTOR (7 downto 0);
-			  DATA_OUT_PORT : out  STD_LOGIC_VECTOR (7 downto 0);
+			  DATA_OUT_PORT : out  STD_LOGIC_VECTOR (3 downto 0);
 			  WE_SRAM : out  STD_LOGIC;
 			  WE_PORT : out  STD_LOGIC);
 end MMU;
@@ -49,16 +49,16 @@ process(DATA_PTR,DATA_IN,DATA_IN_SRAM,DATA_IN_PORT,WE)
 			ADDR_PORT <= DATA_PTR(6 downto 0);
 			DATA_OUT <= "00000000";
 			DATA_OUT_SRAM <= "00000000";
-			DATA_OUT_PORT <= DATA_IN;
+			DATA_OUT_PORT <= DATA_IN(3 downto 0);
 			WE_SRAM <= '0';
 			WE_PORT <= '1';
 		elsif ((DATA_PTR = SRAM) and (WE = '0')) then
 			-- read port
 			ADDR_SRAM <= "000000000";
 			ADDR_PORT <= DATA_PTR(6 downto 0);
-			DATA_OUT <= DATA_IN_PORT;
+			DATA_OUT <= "000" & DATA_IN_PORT;
 			DATA_OUT_SRAM <= "00000000";
-			DATA_OUT_PORT <= "00000000";
+			DATA_OUT_PORT <= "0000";
 			WE_SRAM <= '0';
 			WE_PORT <= '0';
 		elsif ((DATA_PTR >= SRAM) and (WE = '1')) then 
@@ -67,7 +67,7 @@ process(DATA_PTR,DATA_IN,DATA_IN_SRAM,DATA_IN_PORT,WE)
 			ADDR_PORT <= "0000000";
 			DATA_OUT <= "00000000";
 			DATA_OUT_SRAM <= DATA_IN;
-			DATA_OUT_PORT <= "00000000";
+			DATA_OUT_PORT <= "0000";
 			WE_SRAM <= '1';
 			WE_PORT <= '0';
 		elsif ((DATA_PTR >= SRAM) and (WE = '0')) then
@@ -76,7 +76,7 @@ process(DATA_PTR,DATA_IN,DATA_IN_SRAM,DATA_IN_PORT,WE)
 			ADDR_PORT <= "0000000";
 			DATA_OUT <= DATA_IN_SRAM;
 			DATA_OUT_SRAM <= "00000000";
-			DATA_OUT_PORT <= "00000000";
+			DATA_OUT_PORT <= "0000";
 			WE_SRAM <= '0';
 			WE_PORT <= '0';
 		else
@@ -85,7 +85,7 @@ process(DATA_PTR,DATA_IN,DATA_IN_SRAM,DATA_IN_PORT,WE)
 			ADDR_PORT <= "0000000";
 			DATA_OUT <= "00000000";
 			DATA_OUT_SRAM <= "00000000";
-			DATA_OUT_PORT <= "00000000";
+			DATA_OUT_PORT <= "0000";
 			WE_SRAM <= '0';
 			WE_PORT <= '0';
 		end if;

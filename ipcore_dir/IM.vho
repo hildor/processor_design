@@ -55,7 +55,6 @@ COMPONENT IM
     a : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
     d : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     clk : IN STD_LOGIC;
-    ce : IN STD_LOGIC;
     q : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
   );
 END COMPONENT;
@@ -70,7 +69,6 @@ your_instance_name : IM
     a => a,
     d => d,
     clk => clk,
-    ce => ce,
     q => q
   );
 -- INST_TAG_END ------ End INSTANTIATION Template ------------

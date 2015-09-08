@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbol version="7" name="M2_16">
+    <symboltype>BLOCK</symboltype>
+    <timestamp>2015-9-8T0:7:42</timestamp>
+    <pin polarity="Input" x="272" y="-240" name="D0(15:0)" />
+    <pin polarity="Input" x="160" y="-240" name="D1(15:0)" />
+    <pin polarity="Output" x="272" y="16" name="O(15:0)" />
+    <pin polarity="Input" x="160" y="16" name="S" />
+    <graph>
+        <rect width="208" x="112" y="-188" height="152" />
+        <line x2="272" y1="-244" y2="-188" x1="272" />
+        <rect width="32" x="256" y="-240" height="52" />
+        <line x2="160" y1="-244" y2="-188" x1="160" />
+        <rect width="32" x="144" y="-240" height="52" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="120" y="-164" type="pin D1(15:0)" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="224" y="-164" type="pin D0(15:0)" />
+        <line x2="272" y1="16" y2="-36" x1="272" />
+        <rect width="32" x="256" y="-36" height="52" />
+        <line x2="160" y1="-36" y2="20" x1="160" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-60" type="pin O(15:0)" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="152" y="-60" type="pin S" />
+    </graph>
+</symbol>

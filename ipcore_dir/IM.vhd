@@ -45,7 +45,6 @@ ENTITY IM IS
     a : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
     d : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     clk : IN STD_LOGIC;
-    ce : IN STD_LOGIC;
     q : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
   );
 END IM;
@@ -57,7 +56,6 @@ COMPONENT wrapped_IM
     a : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
     d : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     clk : IN STD_LOGIC;
-    ce : IN STD_LOGIC;
     q : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
   );
 END COMPONENT;
@@ -70,7 +68,7 @@ END COMPONENT;
       c_default_data => "0000000000000000",
       c_depth => 1024,
       c_has_a => 1,
-      c_has_ce => 1,
+      c_has_ce => 0,
       c_has_sclr => 0,
       c_has_sinit => 0,
       c_has_sset => 0,
@@ -95,7 +93,6 @@ U0 : wrapped_IM
     a => a,
     d => d,
     clk => clk,
-    ce => ce,
     q => q
   );
 -- synthesis translate_on

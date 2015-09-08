@@ -6,7 +6,7 @@
 -- Design Name: 		processor_design
 -- Module Name:    	DEC - behavioral 
 -- Project Name: 
--- Target Devices: 
+-- Target Devices: 	XUP Virtex-II Pro Development System (Virtex2P)
 -- Tool versions: 
 -- Description: 		decoder for control unit that translates the instructionset
 --
@@ -37,7 +37,8 @@ entity DEC is
            WE_MMU : out  STD_LOGIC;
            SEL_IMMED : out  STD_LOGIC;
 			  SEL_MOV : out  STD_LOGIC;
-           SEL_RF_IN : out  STD_LOGIC);
+           SEL_RF_IN : out  STD_LOGIC;
+			  SEL_NOP :  out STD_LOGIC);
 end DEC;
 
 architecture behavioral of DEC is
@@ -77,6 +78,7 @@ begin
 										SEL_IMMED	<= '0';
 										SEL_MOV		<= '0';
 										SEL_RF_IN 	<= '0';
+										SEL_NOP 		<= '0';
 					-- LSL (add of two equal values result in left shift -> also known as multiplied by 2) 	
 					-- ADD
 					when "11" => 	ADDR_PC		<= "0000000000";
@@ -91,6 +93,7 @@ begin
 										SEL_IMMED	<= '0';
 										SEL_MOV		<= '0';
 										SEL_RF_IN 	<= '0';
+										SEL_NOP 		<= '0';
 					-- CATCH OTHERS
 					when others => ADDR_PC		<= "0000000000";
 										ADDR_OP_A 	<= "00000";
@@ -104,6 +107,7 @@ begin
 										SEL_IMMED	<= '0';
 										SEL_MOV		<= '0';
 										SEL_RF_IN 	<= '0';
+										SEL_NOP 		<= '0';
 				end case; 
 -- ! + ?
 			-- ###########################################
@@ -124,6 +128,7 @@ begin
 										SEL_IMMED	<= '0';
 										SEL_MOV		<= '0';
 										SEL_RF_IN 	<= '0';
+										SEL_NOP 		<= '0';
 					-- SUB
 					when "10" =>	ADDR_PC		<= "0000000000";
 										ADDR_OP_A 	<= INS(8 downto 4);
@@ -136,8 +141,8 @@ begin
 										WE_MMU 		<= '0';
 										SEL_IMMED	<= '0';
 										SEL_MOV		<= '0';
-										SEL_RF_IN 	<= '0';	
-
+										SEL_RF_IN 	<= '0';
+										SEL_NOP 		<= '0';										
 					-- CATCH OTHERS
 					when others => ADDR_PC		<= "0000000000";
 										ADDR_OP_A 	<= "00000";
@@ -151,6 +156,7 @@ begin
 										SEL_IMMED	<= '0';
 										SEL_MOV		<= '0';
 										SEL_RF_IN 	<= '0';
+										SEL_NOP 		<= '0';
 				end case;
 -- ! + ?
 			-- ###########################################
@@ -170,7 +176,8 @@ begin
 										WE_MMU 		<= '0';
 										SEL_IMMED	<= '0';
 										SEL_MOV		<= '0';
-										SEL_RF_IN 	<= '0';	
+										SEL_RF_IN 	<= '0';
+										SEL_NOP 		<= '0';										
 					-- EOR
 					when "01" => 	ADDR_PC		<= "0000000000";
 										ADDR_OP_A 	<= INS(8 downto 4);
@@ -184,6 +191,7 @@ begin
 										SEL_IMMED	<= '0';
 										SEL_MOV		<= '0';
 										SEL_RF_IN 	<= '0';
+										SEL_NOP 		<= '0';
 					-- OR
 					when "10" =>	ADDR_PC		<= "0000000000";
 										ADDR_OP_A 	<= INS(8 downto 4);
@@ -197,6 +205,7 @@ begin
 										SEL_IMMED	<= '0';
 										SEL_MOV		<= '0';
 										SEL_RF_IN 	<= '0';
+										SEL_NOP 		<= '0';
 					-- MOV (add operand b(Rr) with zero and write to rf(Rd))
 					when others => ADDR_PC		<= "0000000000";
 										ADDR_OP_A 	<= INS(8 downto 4);
@@ -210,6 +219,7 @@ begin
 										SEL_IMMED	<= '0';
 										SEL_MOV		<= '1';
 										SEL_RF_IN 	<= '0';
+										SEL_NOP 		<= '0';
 -- ! + ?		
 				end case;
 				
@@ -229,6 +239,7 @@ begin
 								SEL_IMMED	<= '1';
 								SEL_MOV		<= '0';
 								SEL_RF_IN 	<= '0';
+								SEL_NOP 		<= '0';
 			-- SUBI					
 			when "0101" =>	ADDR_PC		<= "0000000000";
 								ADDR_OP_A 	<= INS(8 downto 4);
@@ -242,6 +253,7 @@ begin
 								SEL_IMMED	<= '1';
 								SEL_MOV		<= '0';
 								SEL_RF_IN 	<= '0';
+								SEL_NOP 		<= '0';
 			-- ORI					
 			when "0110" =>	ADDR_PC		<= "0000000000";
 								ADDR_OP_A 	<= INS(8 downto 4);
@@ -255,6 +267,7 @@ begin
 								SEL_IMMED	<= '1';
 								SEL_MOV		<= '0';
 								SEL_RF_IN 	<= '0';
+								SEL_NOP 		<= '0';
 			-- ANDI
 			when "0111" => ADDR_PC		<= "0000000000";
 								ADDR_OP_A 	<= INS(8 downto 4);
@@ -268,6 +281,7 @@ begin
 								SEL_IMMED	<= '1';
 								SEL_MOV		<= '0';
 								SEL_RF_IN 	<= '0';
+								SEL_NOP 		<= '0';
 			when "1000" =>
 				-- LD (load operand value from ram -> indirect addressing -> set stack pointer first)
 				if (INS(9) = '0') then
@@ -283,6 +297,7 @@ begin
 					SEL_IMMED	<= '0';
 					SEL_MOV		<= '0';
 					SEL_RF_IN 	<= '1';
+					SEL_NOP 		<= '0';
 				-- ST (store operand value in ram -> indirect addressing -> set stack pointer first)
 				elsif (INS(9) = '1')then
 					ADDR_PC		<= "0000000000";
@@ -296,7 +311,8 @@ begin
 					WE_MMU 		<= '1';
 					SEL_IMMED	<= '0';
 					SEL_MOV		<= '1';
-					SEL_RF_IN 	<= '0';	
+					SEL_RF_IN 	<= '0';
+					SEL_NOP 		<= '0';					
 				-- CATCH OTHERS
 				else
 					ADDR_PC		<= "0000000000";
@@ -310,7 +326,8 @@ begin
 					WE_MMU 		<= '0';
 					SEL_IMMED	<= '0';
 					SEL_MOV		<= '0';
-					SEL_RF_IN 	<= '0';	
+					SEL_RF_IN 	<= '0';
+					SEL_NOP 		<= '0';					
 				end if;
 				
 			-- ###########################################
@@ -331,6 +348,7 @@ begin
 										SEL_IMMED	<= '0';
 										SEL_MOV		<= '0';
 										SEL_RF_IN 	<= '0';
+										SEL_NOP 		<= '0';
 					-- ASR
 					when "101" =>	ADDR_PC		<= "0000000000";
 										ADDR_OP_A 	<= INS(8 downto 4);
@@ -343,7 +361,8 @@ begin
 										WE_MMU 		<= '0';
 										SEL_IMMED	<= '0';
 										SEL_MOV		<= '0';
-										SEL_RF_IN 	<= '0';		
+										SEL_RF_IN 	<= '0';
+										SEL_NOP 		<= '0';										
 					-- DEC
 					when "010" => 	ADDR_PC		<= "0000000000";
 										ADDR_OP_A 	<= INS(8 downto 4);
@@ -356,7 +375,8 @@ begin
 										WE_MMU 		<= '0';
 										SEL_IMMED	<= '1';
 										SEL_MOV		<= '0';
-										SEL_RF_IN 	<= '0';			
+										SEL_RF_IN 	<= '0';
+										SEL_NOP 		<= '0';										
 					-- INC
 					when "011" => 	ADDR_PC		<= "0000000000";
 										ADDR_OP_A 	<= INS(8 downto 4);
@@ -369,7 +389,8 @@ begin
 										WE_MMU 		<= '0';
 										SEL_IMMED	<= '1';
 										SEL_MOV		<= '0';
-										SEL_RF_IN 	<= '0';	
+										SEL_RF_IN 	<= '0';
+										SEL_NOP 		<= '0';
 					-- LSR
 					when "110" => 	ADDR_PC		<= "0000000000";
 										ADDR_OP_A 	<= INS(8 downto 4);
@@ -382,7 +403,8 @@ begin
 										WE_MMU 		<= '0';
 										SEL_IMMED	<= '0';
 										SEL_MOV		<= '0';
-										SEL_RF_IN 	<= '0';	
+										SEL_RF_IN 	<= '0';
+										SEL_NOP 		<= '0';
 					-- CATCH OTHERS
 					when others =>	ADDR_PC		<= "0000000000";
 										ADDR_OP_A 	<= "00000";
@@ -395,7 +417,8 @@ begin
 										WE_MMU 		<= '0';
 										SEL_IMMED	<= '0';
 										SEL_MOV		<= '0';
-										SEL_RF_IN 	<= '0';	
+										SEL_RF_IN 	<= '0';
+										SEL_NOP 		<= '0';
 				end case;
 			-- ###########################################
 			--	#						RJMP, LDI					#
@@ -412,7 +435,8 @@ begin
 								WE_MMU 		<= '0';
 								SEL_IMMED	<= '0';
 								SEL_MOV		<= '0';
-								SEL_RF_IN 	<= '0';	
+								SEL_RF_IN 	<= '0';
+								SEL_NOP 		<= '1';
 			-- LDI (add operand b(IM) with zero and write to rf(Rd))
 			when "1110" => ADDR_PC		<= "0000000000";
 								ADDR_OP_A 	<= INS(8 downto 4);					
@@ -426,6 +450,7 @@ begin
 								SEL_IMMED	<= '1';
 								SEL_MOV		<= '1';
 								SEL_RF_IN 	<= '0';
+								SEL_NOP 		<= '0';
 								
 			-- ###########################################
 			--	#				BRBS, BRBC							#
@@ -451,7 +476,8 @@ begin
 						WE_MMU 		<= '0';
 						SEL_IMMED	<= '0';
 						SEL_MOV		<= '0';
-						SEL_RF_IN 	<= '0';	
+						SEL_RF_IN 	<= '0';
+						SEL_NOP 		<= '1';
 					else
 						ADDR_PC		<= "0000000000";
 						ADDR_OP_A 	<= "00000";
@@ -464,7 +490,8 @@ begin
 						WE_MMU 		<= '0';
 						SEL_IMMED	<= '0';
 						SEL_MOV		<= '0';
-						SEL_RF_IN 	<= '0';	
+						SEL_RF_IN 	<= '0';
+						SEL_NOP 		<= '0';
 					end if;
 				-- BRBC
 				elsif (INS(11 downto 10) = "01") then 
@@ -487,6 +514,7 @@ begin
 						SEL_IMMED	<= '0';
 						SEL_MOV		<= '0';
 						SEL_RF_IN 	<= '0';
+						SEL_NOP 		<= '1';
 					else 
 						ADDR_PC		<= "0000000000";
 						ADDR_OP_A 	<= "00000";
@@ -499,7 +527,8 @@ begin
 						WE_MMU 		<= '0';
 						SEL_IMMED	<= '0';
 						SEL_MOV		<= '0';
-						SEL_RF_IN 	<= '0';	
+						SEL_RF_IN 	<= '0';
+						SEL_NOP 		<= '0';						
 					end if;
 				else
 					ADDR_PC		<= "0000000000";
@@ -513,7 +542,8 @@ begin
 					WE_MMU 		<= '0';
 					SEL_IMMED	<= '0';
 					SEL_MOV		<= '0';
-					SEL_RF_IN 	<= '0';	
+					SEL_RF_IN 	<= '0';
+					SEL_NOP 		<= '0';
 				end if;
 			when others => 
 				ADDR_PC		<= "0000000000";
@@ -527,7 +557,8 @@ begin
 				WE_MMU 		<= '0';
 				SEL_IMMED	<= '0';
 				SEL_MOV		<= '0';
-				SEL_RF_IN 	<= '0';	
+				SEL_RF_IN 	<= '0';
+				SEL_NOP 		<= '0';
 		end case;
 	end process;
 
